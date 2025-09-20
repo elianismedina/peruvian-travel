@@ -1,0 +1,152 @@
+@import "tailwindcss";
+
+/* Custom fonts */
+@theme {
+  --font-heading: "Cinzel", serif;
+  --font-body: "Merriweather", serif;
+}
+
+/* Custom color palette */
+@theme {
+  --color-primary: #D91023;
+  --color-primary-50: #fef2f2;
+  --color-primary-100: #fee2e2;
+  --color-primary-200: #fecaca;
+  --color-primary-300: #fca5a5;
+  --color-primary-400: #f87171;
+  --color-primary-500: #D91023;
+  --color-primary-600: #dc2626;
+  --color-primary-700: #b91c1c;
+  --color-primary-800: #991b1b;
+  --color-primary-900: #7f1d1d;
+  --color-primary-950: #450a0a;
+
+  --color-secondary: #FDB813;
+  --color-secondary-50: #fffbeb;
+  --color-secondary-100: #fef3c7;
+  --color-secondary-200: #fde68a;
+  --color-secondary-300: #fcd34d;
+  --color-secondary-400: #fbbf24;
+  --color-secondary-500: #FDB813;
+  --color-secondary-600: #d97706;
+  --color-secondary-700: #b45309;
+  --color-secondary-800: #92400e;
+  --color-secondary-900: #78350f;
+  --color-secondary-950: #451a03;
+
+  --color-tertiary: #3A8E4F;
+  --color-tertiary-50: #f0fdf4;
+  --color-tertiary-100: #dcfce7;
+  --color-tertiary-200: #bbf7d0;
+  --color-tertiary-300: #86efac;
+  --color-tertiary-400: #4ade80;
+  --color-tertiary-500: #3A8E4F;
+  --color-tertiary-600: #16a34a;
+  --color-tertiary-700: #15803d;
+  --color-tertiary-800: #166534;
+  --color-tertiary-900: #14532d;
+  --color-tertiary-950: #052e16;
+
+  /* White is already defined as a standard color in Tailwind */
+  --color-white: #FFFFFF;
+}
+
+/* Additional utility classes for navigation */
+@layer utilities {
+  .sticky {
+    position: sticky;
+  }
+  
+  .top-0 {
+    top: 0;
+  }
+  
+  .z-50 {
+    z-index: 50;
+  }
+  
+  .shadow-lg {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .shadow-md {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  }
+  
+  .hover\:shadow-lg:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .transition-colors {
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+  }
+  
+  .duration-200 {
+    transition-duration: 200ms;
+  }
+  
+  .focus\:outline-none:focus {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+  }
+  
+  .focus\:text-primary-700:focus {
+    color: var(--color-primary-700);
+  }
+  
+  /* Hero Section Utilities */
+  .animate-bounce {
+    animation: bounce 1s infinite;
+  }
+  
+  @keyframes bounce {
+    0%, 20%, 53%, 80%, 100% {
+      animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+      transform: translate3d(0,0,0);
+    }
+    40%, 43% {
+      animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+      transform: translate3d(0, -30px, 0);
+    }
+    70% {
+      animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+      transform: translate3d(0, -15px, 0);
+    }
+    90% {
+      transform: translate3d(0,-4px,0);
+    }
+  }
+  
+  .transform {
+    transform: translate3d(0, 0, 0);
+  }
+  
+  .hover\:-translate-y-1:hover {
+    transform: translate3d(0, -0.25rem, 0);
+  }
+  
+  .transition-all {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+  }
+  
+  .duration-300 {
+    transition-duration: 300ms;
+  }
+  
+  .hover\:shadow-xl:hover {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
+
+  /* Custom font utilities */
+  .font-heading {
+    font-family: var(--font-heading);
+  }
+
+  .font-body {
+    font-family: var(--font-body);
+  }
+}
