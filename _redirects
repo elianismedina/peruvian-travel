@@ -1,0 +1,11 @@
+# Redirects for SPA routing
+/ /src/inicio.html 200
+/destinos /src/destinos.html 200
+/costa /src/costa/costa.html 200
+/costa/lima /src/costa/lima.html 200
+/costa/playas /src/costa/playas.html 200
+/sierra /src/sierra/sierra.html 200
+/sierra/andes /src/sierra/andes.html 200
+/selva /src/selva/selva.html 200
+/selva/iquitos /src/selva/iquitos.html 200
+/selva/amazonia /src/selva/amazonia.html 200

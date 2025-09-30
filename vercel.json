@@ -1,0 +1,67 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "src/**/*",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "public/**/*",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "index.html",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/",
+      "dest": "/index.html"
+    },
+    {
+      "src": "/destinos",
+      "dest": "/src/destinos.html"
+    },
+    {
+      "src": "/costa",
+      "dest": "/src/costa/costa.html"
+    },
+    {
+      "src": "/costa/lima",
+      "dest": "/src/costa/lima.html"
+    },
+    {
+      "src": "/costa/playas",
+      "dest": "/src/costa/playas.html"
+    },
+    {
+      "src": "/sierra",
+      "dest": "/src/sierra/sierra.html"
+    },
+    {
+      "src": "/sierra/andes",
+      "dest": "/src/sierra/andes.html"
+    },
+    {
+      "src": "/selva",
+      "dest": "/src/selva/selva.html"
+    },
+    {
+      "src": "/selva/iquitos",
+      "dest": "/src/selva/iquitos.html"
+    },
+    {
+      "src": "/selva/amazonia",
+      "dest": "/src/selva/amazonia.html"
+    },
+    {
+      "src": "/public/(.*)",
+      "dest": "/public/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/$1"
+    }
+  ]
+}

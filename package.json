@@ -1,0 +1,15 @@
+{
+  "name": "peruvian-travel",
+  "version": "1.0.0",
+  "description": "Sitio web de turismo para explorar destinos en Perú",
+  "main": "src/inicio.html",
+  "scripts": {
+    "build": "echo 'Build completed'",
+    "dev": "echo 'Development server would start here'"
+  },
+  "keywords": ["peru", "travel", "tourism", "destinations"],
+  "author": "Peruvian Travel",
+  "license": "MIT",
+  "devDependencies": {},
+  "dependencies": {}
+}
