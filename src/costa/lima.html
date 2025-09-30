@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lima - Peruvian Travel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" rel="stylesheet">
+  <link href="../output.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 min-h-screen">
+  <!-- Navigation Bar -->
+  <nav class="bg-white shadow-lg sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <!-- Logo -->
+        <div class="flex-shrink-0">
+          <a href="inicio.html" class="flex items-center">
+            <img src="../../public/assets/images/LogoPeruvianTravel.png" alt="Peruvian Travel Logo" class="h-6 sm:h-7 md:h-8 w-auto">
+          </a>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <div class="hidden md:block">
+          <div class="ml-10 flex items-baseline space-x-8">
+            <a href="../inicio.html" class="text-primary hover:text-primary-700 px-3 py-2 text-sm font-medium transition-colors duration-200 font-heading">
+              Inicio
+            </a>
+            <a href="costa.html" class="text-primary hover:text-primary-700 px-3 py-2 text-sm font-medium transition-colors duration-200 font-heading">
+              Costa
+            </a>
+            <a href="../sierra/sierra.html" class="text-primary hover:text-primary-700 px-3 py-2 text-sm font-medium transition-colors duration-200 font-heading">
+              Sierra
+            </a>
+            <a href="../selva/selva.html" class="text-primary hover:text-primary-700 px-3 py-2 text-sm font-medium transition-colors duration-200 font-heading">
+              Selva
+            </a>
+            <a href="../destinos.html" class="bg-secondary hover:bg-secondary-600 text-black px-6 py-2 rounded-lg text-sm font-medium transition-colors duration-200 shadow-md hover:shadow-lg font-heading">
+              Explorar destinos
+            </a>
+          </div>
+        </div>
+
+        <!-- Mobile menu button -->
+        <div class="md:hidden">
+          <button id="mobile-menu-button" type="button" class="text-primary hover:text-primary-700 focus:outline-none focus:text-primary-700 p-2">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Navigation Menu -->
+      <div id="mobile-menu" class="md:hidden hidden fixed inset-0 z-50 bg-gradient-to-b from-tertiary to-secondary">
+        <!-- Close button -->
+        <div class="flex justify-end p-4">
+          <button id="close-mobile-menu" type="button" class="text-white hover:text-gray-200 focus:outline-none">
+            <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        
+        <!-- Menu items centered -->
+        <div class="flex flex-col items-center justify-center h-full -mt-16 space-y-8">
+          <a href="../inicio.html" class="text-white text-xl font-medium transition-colors duration-200 font-heading">
+            Inicio
+          </a>
+          <a href="costa.html" class="text-white text-xl font-medium transition-colors duration-200 font-heading">
+            Costa
+          </a>
+          <a href="../sierra/sierra.html" class="text-white text-xl font-medium transition-colors duration-200 font-heading">
+            Sierra
+          </a>
+          <a href="../selva/selva.html" class="text-white text-xl font-medium transition-colors duration-200 font-heading">
+            Selva
+          </a>
+        </div>
+        
+        <!-- Logo at bottom -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+          <img src="../../public/assets/images/LogoPeruvianTravel.png" alt="Peruvian Travel Logo" class="h-8 w-auto">
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section style="position: relative; height: 100vh; display: flex; align-items: center; justify-content: center; overflow: hidden; background-image: url('https://res.cloudinary.com/dxa54qfxx/image/upload/v1759194448/limaPeru_vduw3f.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+    <!-- Overlay for better text readability -->
+    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(0, 0, 0, 0.4);"></div>
+    
+    <!-- Hero Content -->
+    <div style="position: relative; z-index: 10; text-align: center; color: white; padding: 0 1rem; max-width: 64rem; margin: 0 auto;">
+      <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 leading-tight px-2 font-heading">
+        Lima
+      </h1>
+      <h2 class="text-lg sm:text-xl md:text-2xl lg:text-3xl font-medium mb-6 sm:mb-8 opacity-90 px-4 font-heading">
+        La capital gastronómica de América del Sur, donde la historia colonial se mezcla con la modernidad.
+      </h2>
+      
+      <!-- Hero CTA Buttons -->
+      <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-4">
+        <a href="#gastronomia" class="bg-secondary hover:bg-secondary-600 text-black px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 w-full sm:w-auto text-center font-heading">
+          Descubre la Gastronomía
+        </a>
+        <a href="#lugares" class="border-2 border-white text-white hover:bg-white hover:text-primary px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-semibold transition-all duration-300 w-full sm:w-auto text-center font-heading">
+          Explora los Lugares
+        </a>
+      </div>
+    </div>
+    
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
+      <div class="animate-bounce">
+        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <div class="max-w-6xl mx-auto p-4 sm:p-6 lg:p-8">
+    
+    <!-- Introduction Section -->
+    <section class="text-center mb-8 sm:mb-12">
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary mb-3 sm:mb-4 font-heading">
+        Bienvenido a Lima
+      </h2>
+      <p class="text-base sm:text-lg text-gray-600 px-4 font-body max-w-4xl mx-auto">
+        Lima, conocida como "La Ciudad de los Reyes", es la capital de Perú y una de las ciudades más importantes de América Latina. 
+        Fundada en 1535 por Francisco Pizarro, combina la riqueza histórica colonial con la modernidad de una metrópolis del siglo XXI.
+      </p>
+    </section>
+
+    <!-- Places to Visit Section -->
+    <section id="lugares" class="mb-8 sm:mb-12">
+      <h3 class="text-2xl sm:text-3xl font-bold text-primary mb-6 sm:mb-8 text-center font-heading">
+        Lugares Emblemáticos
+      </h3>
+      
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
+        <div class="bg-white rounded-lg shadow-md p-4 sm:p-6 hover:shadow-lg transition-shadow duration-300">
+          <div class="bg-secondary-100 h-32 sm:h-40 lg:h-48 rounded-lg mb-3 sm:mb-4 flex items-center justify-center">
+            <span class="text-secondary-600 font-medium text-sm sm:text-base text-center px-2">Centro Histórico</span>
+          </div>
+          <h4 class="text-base sm:text-lg font-semibold text-primary mb-1 sm:mb-2 font-heading">Centro Histórico</h4>
+          <p class="text-gray-600 text-xs sm:text-sm font-body">Patrimonio de la Humanidad con arquitectura colonial única</p>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-md p-4 sm:p-6 hover:shadow-lg transition-shadow duration-300">
+          <div class="bg-secondary-100 h-32 sm:h-40 lg:h-48 rounded-lg mb-3 sm:mb-4 flex items-center justify-center">
+            <span class="text-secondary-600 font-medium text-sm sm:text-base text-center px-2">Miraflores</span>
+          </div>
+          <h4 class="text-base sm:text-lg font-semibold text-primary mb-1 sm:mb-2 font-heading">Miraflores</h4>
+          <p class="text-gray-600 text-xs sm:text-sm font-body">Distrito moderno con vista al océano Pacífico</p>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-md p-4 sm:p-6 hover:shadow-lg transition-shadow duration-300">
+          <div class="bg-secondary-100 h-32 sm:h-40 lg:h-48 rounded-lg mb-3 sm:mb-4 flex items-center justify-center">
+            <span class="text-secondary-600 font-medium text-sm sm:text-base text-center px-2">Barranco</span>
+          </div>
+          <h4 class="text-base sm:text-lg font-semibold text-primary mb-1 sm:mb-2 font-heading">Barranco</h4>
+          <p class="text-gray-600 text-xs sm:text-sm font-body">Barrio bohemio con arte, música y vida nocturna</p>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-md p-4 sm:p-6 hover:shadow-lg transition-shadow duration-300">
+          <div class="bg-secondary-100 h-32 sm:h-40 lg:h-48 rounded-lg mb-3 sm:mb-4 flex items-center justify-center">
+            <span class="text-secondary-600 font-medium text-sm sm:text-base text-center px-2">San Isidro</span>
+          </div>
+          <h4 class="text-base sm:text-lg font-semibold text-primary mb-1 sm:mb-2 font-heading">San Isidro</h4>
+          <p class="text-gray-600 text-xs sm:text-sm font-body">Distrito financiero y residencial exclusivo</p>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-md p-4 sm:p-6 hover:shadow-lg transition-shadow duration-300">
+          <div class="bg-secondary-100 h-32 sm:h-40 lg:h-48 rounded-lg mb-3 sm:mb-4 flex items-center justify-center">
+            <span class="text-secondary-600 font-medium text-sm sm:text-base text-center px-2">Malecón de Miraflores</span>
+          </div>
+          <h4 class="text-base sm:text-lg font-semibold text-primary mb-1 sm:mb-2 font-heading">Malecón de Miraflores</h4>
+          <p class="text-gray-600 text-xs sm:text-sm font-body">Paseo costero con parques y actividades al aire libre</p>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-md p-4 sm:p-6 hover:shadow-lg transition-shadow duration-300">
+          <div class="bg-secondary-100 h-32 sm:h-40 lg:h-48 rounded-lg mb-3 sm:mb-4 flex items-center justify-center">
+            <span class="text-secondary-600 font-medium text-sm sm:text-base text-center px-2">Plaza Mayor</span>
+          </div>
+          <h4 class="text-base sm:text-lg font-semibold text-primary mb-1 sm:mb-2 font-heading">Plaza Mayor</h4>
+          <p class="text-gray-600 text-xs sm:text-sm font-body">Corazón histórico de Lima y punto de fundación</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gastronomy Section -->
+    <section id="gastronomia" class="mb-8 sm:mb-12">
+      <div class="bg-gradient-to-r from-secondary-50 to-primary-50 rounded-lg p-4 sm:p-6 lg:p-8">
+        <div class="text-center mb-6 sm:mb-8">
+          <h3 class="text-2xl sm:text-3xl font-bold text-primary mb-3 sm:mb-4 font-heading">
+            Capital Gastronómica
+          </h3>
+          <p class="text-base sm:text-lg text-gray-700 px-2 font-body max-w-3xl mx-auto">
+            Lima es reconocida mundialmente como la capital gastronómica de América del Sur, 
+            con una cocina que fusiona tradiciones ancestrales con técnicas modernas.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+          <div class="bg-white p-3 sm:p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300">
+            <h4 class="font-semibold text-secondary-700 mb-1 sm:mb-2 text-sm sm:text-base font-heading">Ceviche</h4>
+            <p class="text-xs sm:text-sm text-gray-600 font-body">Plato bandera del Perú</p>
+          </div>
+          <div class="bg-white p-3 sm:p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300">
+            <h4 class="font-semibold text-secondary-700 mb-1 sm:mb-2 text-sm sm:text-base font-heading">Anticuchos</h4>
+            <p class="text-xs sm:text-sm text-gray-600 font-body">Brochetas de corazón de res</p>
+          </div>
+          <div class="bg-white p-3 sm:p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300">
+            <h4 class="font-semibold text-secondary-700 mb-1 sm:mb-2 text-sm sm:text-base font-heading">Lomo Saltado</h4>
+            <p class="text-xs sm:text-sm text-gray-600 font-body">Fusión de sabores peruanos y asiáticos</p>
+          </div>
+          <div class="bg-white p-3 sm:p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300">
+            <h4 class="font-semibold text-secondary-700 mb-1 sm:mb-2 text-sm sm:text-base font-heading">Pisco Sour</h4>
+            <p class="text-xs sm:text-sm text-gray-600 font-body">Cóctel nacional peruano</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Culture and History Section -->
+    <section class="mb-8 sm:mb-12">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
+        <div class="bg-white rounded-lg shadow-md p-4 sm:p-6 lg:p-8">
+          <h4 class="text-xl sm:text-2xl font-bold text-primary mb-3 sm:mb-4 font-heading">Historia Colonial</h4>
+          <p class="text-sm sm:text-base text-gray-600 mb-3 sm:mb-4 font-body">
+            Lima conserva un magnífico patrimonio colonial con iglesias, conventos y casonas que datan del siglo XVI. 
+            El Centro Histórico es Patrimonio de la Humanidad desde 1991.
+          </p>
+          <ul class="text-sm sm:text-base text-gray-600 space-y-1 font-body">
+            <li>• Catedral de Lima</li>
+            <li>• Convento de San Francisco</li>
+            <li>• Casa de la Literatura Peruana</li>
+            <li>• Palacio de Gobierno</li>
+          </ul>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-md p-4 sm:p-6 lg:p-8">
+          <h4 class="text-xl sm:text-2xl font-bold text-primary mb-3 sm:mb-4 font-heading">Cultura Moderna</h4>
+          <p class="text-sm sm:text-base text-gray-600 mb-3 sm:mb-4 font-body">
+            Lima es un centro cultural vibrante con museos de clase mundial, galerías de arte, 
+            teatros y una escena gastronómica que atrae chefs y comensales de todo el mundo.
+          </p>
+          <ul class="text-sm sm:text-base text-gray-600 space-y-1 font-body">
+            <li>• Museo Larco</li>
+            <li>• MALI (Museo de Arte)</li>
+            <li>• Circuito Mágico del Agua</li>
+            <li>• Restaurantes de clase mundial</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Facts Section -->
+    <section class="mb-8 sm:mb-12">
+      <div class="bg-gradient-to-r from-primary-50 to-tertiary-50 rounded-lg p-4 sm:p-6 lg:p-8">
+        <h3 class="text-xl sm:text-2xl font-bold text-primary mb-4 sm:mb-6 text-center font-heading">
+          Datos Curiosos de Lima
+        </h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+          <div class="bg-white p-3 sm:p-4 rounded-lg shadow-sm">
+            <h4 class="font-semibold text-primary mb-1 sm:mb-2 text-sm sm:text-base font-heading">Fundación</h4>
+            <p class="text-xs sm:text-sm text-gray-600 font-body">18 de enero de 1535 por Francisco Pizarro</p>
+          </div>
+          <div class="bg-white p-3 sm:p-4 rounded-lg shadow-sm">
+            <h4 class="font-semibold text-primary mb-1 sm:mb-2 text-sm sm:text-base font-heading">Población</h4>
+            <p class="text-xs sm:text-sm text-gray-600 font-body">Más de 10 millones de habitantes</p>
+          </div>
+          <div class="bg-white p-3 sm:p-4 rounded-lg shadow-sm">
+            <h4 class="font-semibold text-primary mb-1 sm:mb-2 text-sm sm:text-base font-heading">Clima</h4>
+            <p class="text-xs sm:text-sm text-gray-600 font-body">Desértico y templado todo el año</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Back to Costa Section -->
+  <section class="bg-gray-50 py-8 sm:py-12">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="mb-6">
+        <img src="../../public/assets/images/LogoPeruvianTravel.png" alt="Peruvian Travel Logo" class="h-12 sm:h-16 w-auto mx-auto mb-4">
+      </div>
+      <h3 class="text-xl sm:text-2xl font-bold text-primary mb-3 sm:mb-4 font-heading">
+        ¿Listo para explorar más de la Costa?
+      </h3>
+      <p class="text-base sm:text-lg text-gray-700 mb-4 sm:mb-6 font-body">
+        Lima es solo el comienzo de las maravillas que ofrece la costa peruana.
+      </p>
+      <a href="costa.html" class="inline-block bg-secondary hover:bg-secondary-600 text-black px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 font-heading">
+        Volver a Costa Peruana
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-primary/90 text-white py-8 sm:py-12">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+
+        <!-- Destinations -->
+        <div>
+          <h3 class="text-lg font-semibold mb-4 font-heading">Destinos</h3>
+          <ul class="space-y-2">
+            <li><a href="costa.html" class="text-white/80 hover:text-white transition-colors duration-200 text-sm sm:text-base font-body">Costa</a></li>
+            <li><a href="../sierra/sierra.html" class="text-white/80 hover:text-white transition-colors duration-200 text-sm sm:text-base font-body">Sierra</a></li>
+            <li><a href="../selva/selva.html" class="text-white/80 hover:text-white transition-colors duration-200 text-sm sm:text-base font-body">Selva</a></li>
+          </ul>
+        </div>
+
+        <!-- Company Info -->
+        <div>
+          <h3 class="text-lg font-semibold mb-4 font-heading">Empresa</h3>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-white/80 hover:text-white transition-colors duration-200 text-sm sm:text-base font-body">Acerca de</a></li>
+            <li><a href="#" class="text-white/80 hover:text-white transition-colors duration-200 text-sm sm:text-base font-body">Contacto</a></li>
+            <li><a href="#" class="text-white/80 hover:text-white transition-colors duration-200 text-sm sm:text-base font-body">Blog</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div>
+          <h3 class="text-lg font-semibold mb-4 font-heading">Contacto</h3>
+          <div class="space-y-2 text-sm sm:text-base font-body">
+            <p class="text-white/80">Lima, Perú</p>
+            <p class="text-white/80">+51 999 999 999</p>
+            <p class="text-white/80">info@peruvian-travel.com</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Section -->
+      <div class="border-t border-white/20 mt-8 pt-6 sm:pt-8">
+        <div class="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
+          <p class="text-sm text-white/70 font-body">
+            © 2025 Peruvian Travel. Todos los derechos reservados.
+          </p>
+          <div class="flex space-x-6">
+            <a href="#" class="text-white/70 hover:text-white transition-colors duration-200 text-sm font-body">Términos de Uso</a>
+            <a href="#" class="text-white/70 hover:text-white transition-colors duration-200 text-sm font-body">Política de Privacidad</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript for mobile menu toggle -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const mobileMenuButton = document.getElementById('mobile-menu-button');
+      const closeMobileMenuButton = document.getElementById('close-mobile-menu');
+      const mobileMenu = document.getElementById('mobile-menu');
+
+      mobileMenuButton.addEventListener('click', function() {
+        mobileMenu.classList.toggle('hidden');
+      });
+
+      closeMobileMenuButton.addEventListener('click', function() {
+        mobileMenu.classList.add('hidden');
+      });
+
+      // Close mobile menu when clicking on a link
+      const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+      mobileMenuLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          mobileMenu.classList.add('hidden');
+        });
+      });
+
+      // Smooth scrolling for anchor links
+      const anchorLinks = document.querySelectorAll('a[href^="#"]');
+      anchorLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href').substring(1);
+          const targetElement = document.getElementById(targetId);
+          if (targetElement) {
+            targetElement.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

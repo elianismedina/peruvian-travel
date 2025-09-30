@@ -1,0 +1,477 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explorar Destinos - Peruvian Travel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" rel="stylesheet">
+  <link href="./output.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 min-h-screen">
+  <!-- Navigation Bar -->
+  <nav class="bg-white shadow-lg sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <!-- Logo -->
+        <div class="flex-shrink-0">
+          <a href="inicio.html" class="flex items-center">
+            <img src="../public/assets/images/LogoPeruvianTravel.png" alt="Peruvian Travel Logo" class="h-6 sm:h-7 md:h-8 w-auto">
+          </a>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <div class="hidden md:block">
+          <div class="ml-10 flex items-baseline space-x-8">
+            <a href="inicio.html" class="text-primary hover:text-primary-700 px-3 py-2 text-sm font-medium transition-colors duration-200 font-heading">
+              Inicio
+            </a>
+            <a href="costa/costa.html" class="text-primary hover:text-primary-700 px-3 py-2 text-sm font-medium transition-colors duration-200 font-heading">
+              Costa
+            </a>
+            <a href="sierra/sierra.html" class="text-primary hover:text-primary-700 px-3 py-2 text-sm font-medium transition-colors duration-200 font-heading">
+              Sierra
+            </a>
+            <a href="selva/selva.html" class="text-primary hover:text-primary-700 px-3 py-2 text-sm font-medium transition-colors duration-200 font-heading">
+              Selva
+            </a>
+            <a href="destinos.html" class="bg-secondary hover:bg-secondary-600 text-black px-6 py-2 rounded-lg text-sm font-medium transition-colors duration-200 shadow-md hover:shadow-lg font-heading">
+              Explorar destinos
+            </a>
+          </div>
+        </div>
+
+        <!-- Mobile menu button -->
+        <div class="md:hidden">
+          <button id="mobile-menu-button" type="button" class="text-primary hover:text-primary-700 focus:outline-none focus:text-primary-700 p-2">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Navigation Menu -->
+      <div id="mobile-menu" class="md:hidden hidden fixed inset-0 z-50 bg-gradient-to-b from-tertiary to-secondary">
+        <!-- Close button -->
+        <div class="flex justify-end p-4">
+          <button id="close-mobile-menu" type="button" class="text-white hover:text-gray-200 focus:outline-none">
+            <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        
+        <!-- Menu items centered -->
+        <div class="flex flex-col items-center justify-center h-full -mt-16 space-y-8">
+          <a href="inicio.html" class="text-white text-xl font-medium transition-colors duration-200 font-heading">
+            Inicio
+          </a>
+          <a href="costa/costa.html" class="text-white text-xl font-medium transition-colors duration-200 font-heading">
+            Costa
+          </a>
+          <a href="sierra/sierra.html" class="text-white text-xl font-medium transition-colors duration-200 font-heading">
+            Sierra
+          </a>
+          <a href="selva/selva.html" class="text-white text-xl font-medium transition-colors duration-200 font-heading">
+            Selva
+          </a>
+        </div>
+        
+        <!-- Logo at bottom -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+          <img src="../public/assets/images/LogoPeruvianTravel.png" alt="Peruvian Travel Logo" class="h-8 w-auto">
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section style="position: relative; height: 100vh; display: flex; align-items: center; justify-content: center; overflow: hidden; background-image: url('https://res.cloudinary.com/dxa54qfxx/image/upload/v1758384876/machupichu_kdibgw.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+    <!-- Overlay for better text readability -->
+    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(0, 0, 0, 0.4);"></div>
+    
+    <!-- Hero Content -->
+    <div style="position: relative; z-index: 10; text-align: center; color: white; padding: 0 1rem; max-width: 64rem; margin: 0 auto;">
+      <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 leading-tight px-2 font-heading">
+        Explora Destinos
+      </h1>
+      <h2 class="text-lg sm:text-xl md:text-2xl lg:text-3xl font-medium mb-6 sm:mb-8 opacity-90 px-4 font-heading">
+        Descubre todos los destinos mágicos que Perú tiene para ofrecerte
+      </h2>
+      
+      <!-- Hero CTA Buttons -->
+      <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-4">
+        <a href="#regiones" class="bg-secondary hover:bg-secondary-600 text-black px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 w-full sm:w-auto text-center font-heading">
+          Ver Regiones
+        </a>
+        <a href="#ciudades" class="border-2 border-white text-white hover:bg-white hover:text-primary px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-semibold transition-all duration-300 w-full sm:w-auto text-center font-heading">
+          Explorar Ciudades
+        </a>
+      </div>
+    </div>
+    
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
+      <div class="animate-bounce">
+        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <div class="max-w-6xl mx-auto p-4 sm:p-6 lg:p-8">
+    
+    <!-- Introduction Section -->
+    <section class="text-center mb-8 sm:mb-12">
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary mb-3 sm:mb-4 font-heading">
+        Descubre la Diversidad de Perú
+      </h2>
+      <p class="text-base sm:text-lg text-gray-600 px-4 font-body max-w-4xl mx-auto">
+        Perú es un país de contrastes únicos, donde puedes experimentar desde playas tropicales hasta montañas nevadas, 
+        pasando por selvas exuberantes. Cada región tiene su propia magia y cultura que espera ser descubierta.
+      </p>
+    </section>
+
+    <!-- Regions Section -->
+    <section id="regiones" class="mb-8 sm:mb-12">
+      <h3 class="text-2xl sm:text-3xl font-bold text-primary mb-6 sm:mb-8 text-center font-heading">
+        Nuestras Regiones
+      </h3>
+      
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8">
+        <!-- Costa -->
+        <div class="bg-white rounded-lg shadow-lg p-6 lg:p-8 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+          <div class="text-center mb-6">
+            <div class="bg-secondary-100 h-24 w-24 rounded-full mx-auto mb-4 flex items-center justify-center">
+              <svg class="h-12 w-12 text-secondary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+              </svg>
+            </div>
+            <h4 class="text-xl sm:text-2xl font-bold text-primary mb-3 font-heading">Costa</h4>
+            <p class="text-gray-600 font-body mb-4">
+              Playas del Pacífico, ciudades coloniales y la capital gastronómica de América del Sur.
+            </p>
+          </div>
+          <div class="space-y-3 mb-6">
+            <div class="flex items-center">
+              <svg class="h-5 w-5 text-secondary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="text-sm font-body">Lima - Capital gastronómica</span>
+            </div>
+            <div class="flex items-center">
+              <svg class="h-5 w-5 text-secondary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="text-sm font-body">Playas paradisíacas</span>
+            </div>
+            <div class="flex items-center">
+              <svg class="h-5 w-5 text-secondary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="text-sm font-body">Historia colonial</span>
+            </div>
+          </div>
+          <a href="costa/costa.html" class="block w-full bg-secondary hover:bg-secondary-600 text-black text-center py-3 rounded-lg font-semibold transition-colors duration-200 font-heading">
+            Explorar Costa
+          </a>
+        </div>
+
+        <!-- Sierra -->
+        <div class="bg-white rounded-lg shadow-lg p-6 lg:p-8 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+          <div class="text-center mb-6">
+            <div class="bg-tertiary-100 h-24 w-24 rounded-full mx-auto mb-4 flex items-center justify-center">
+              <svg class="h-12 w-12 text-tertiary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+              </svg>
+            </div>
+            <h4 class="text-xl sm:text-2xl font-bold text-primary mb-3 font-heading">Sierra</h4>
+            <p class="text-gray-600 font-body mb-4">
+              Los majestuosos Andes, ciudades coloniales en las alturas y la cultura andina milenaria.
+            </p>
+          </div>
+          <div class="space-y-3 mb-6">
+            <div class="flex items-center">
+              <svg class="h-5 w-5 text-secondary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="text-sm font-body">Cusco - Capital del Imperio Inca</span>
+            </div>
+            <div class="flex items-center">
+              <svg class="h-5 w-5 text-secondary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="text-sm font-body">Machu Picchu</span>
+            </div>
+            <div class="flex items-center">
+              <svg class="h-5 w-5 text-secondary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="text-sm font-body">Cultura andina viva</span>
+            </div>
+          </div>
+          <a href="sierra/sierra.html" class="block w-full bg-tertiary hover:bg-tertiary-600 text-white text-center py-3 rounded-lg font-semibold transition-colors duration-200 font-heading">
+            Explorar Sierra
+          </a>
+        </div>
+
+        <!-- Selva -->
+        <div class="bg-white rounded-lg shadow-lg p-6 lg:p-8 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+          <div class="text-center mb-6">
+            <div class="bg-green-100 h-24 w-24 rounded-full mx-auto mb-4 flex items-center justify-center">
+              <svg class="h-12 w-12 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+              </svg>
+            </div>
+            <h4 class="text-xl sm:text-2xl font-bold text-primary mb-3 font-heading">Selva</h4>
+            <p class="text-gray-600 font-body mb-4">
+              La exuberante Amazonía peruana, biodiversidad única y pueblos indígenas ancestrales.
+            </p>
+          </div>
+          <div class="space-y-3 mb-6">
+            <div class="flex items-center">
+              <svg class="h-5 w-5 text-secondary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="text-sm font-body">Iquitos - Puerta de la Amazonía</span>
+            </div>
+            <div class="flex items-center">
+              <svg class="h-5 w-5 text-secondary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="text-sm font-body">Biodiversidad única</span>
+            </div>
+            <div class="flex items-center">
+              <svg class="h-5 w-5 text-secondary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="text-sm font-body">Ecoturismo y aventura</span>
+            </div>
+          </div>
+          <a href="selva/selva.html" class="block w-full bg-green-600 hover:bg-green-700 text-white text-center py-3 rounded-lg font-semibold transition-colors duration-200 font-heading">
+            Explorar Selva
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Cities Section -->
+    <section id="ciudades" class="mb-8 sm:mb-12">
+      <h3 class="text-2xl sm:text-3xl font-bold text-primary mb-6 sm:mb-8 text-center font-heading">
+        Ciudades Destacadas
+      </h3>
+      
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        <!-- Lima -->
+        <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow duration-300">
+          <div class="bg-secondary-100 h-32 sm:h-40 rounded-lg mb-4 flex items-center justify-center">
+            <span class="text-secondary-600 font-medium text-center px-2">Lima</span>
+          </div>
+          <h4 class="text-lg font-semibold text-primary mb-2 font-heading">Lima</h4>
+          <p class="text-gray-600 text-sm font-body mb-4">Capital gastronómica de América del Sur</p>
+          <a href="costa/lima.html" class="inline-block text-secondary hover:text-secondary-600 font-medium text-sm transition-colors duration-200 font-heading">
+            Descubrir más →
+          </a>
+        </div>
+
+        <!-- Cusco -->
+        <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow duration-300">
+          <div class="bg-tertiary-100 h-32 sm:h-40 rounded-lg mb-4 flex items-center justify-center">
+            <span class="text-tertiary-600 font-medium text-center px-2">Cusco</span>
+          </div>
+          <h4 class="text-lg font-semibold text-primary mb-2 font-heading">Cusco</h4>
+          <p class="text-gray-600 text-sm font-body mb-4">Capital del Imperio Inca</p>
+          <a href="sierra/andes.html" class="inline-block text-secondary hover:text-secondary-600 font-medium text-sm transition-colors duration-200 font-heading">
+            Descubrir más →
+          </a>
+        </div>
+
+        <!-- Iquitos -->
+        <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow duration-300">
+          <div class="bg-green-100 h-32 sm:h-40 rounded-lg mb-4 flex items-center justify-center">
+            <span class="text-green-600 font-medium text-center px-2">Iquitos</span>
+          </div>
+          <h4 class="text-lg font-semibold text-primary mb-2 font-heading">Iquitos</h4>
+          <p class="text-gray-600 text-sm font-body mb-4">Puerta de entrada a la Amazonía</p>
+          <a href="selva/iquitos.html" class="inline-block text-secondary hover:text-secondary-600 font-medium text-sm transition-colors duration-200 font-heading">
+            Descubrir más →
+          </a>
+        </div>
+
+        <!-- Máncora -->
+        <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow duration-300">
+          <div class="bg-secondary-100 h-32 sm:h-40 rounded-lg mb-4 flex items-center justify-center">
+            <span class="text-secondary-600 font-medium text-center px-2">Máncora</span>
+          </div>
+          <h4 class="text-lg font-semibold text-primary mb-2 font-heading">Máncora</h4>
+          <p class="text-gray-600 text-sm font-body mb-4">Paraíso del surf y la playa</p>
+          <a href="costa/playas.html" class="inline-block text-secondary hover:text-secondary-600 font-medium text-sm transition-colors duration-200 font-heading">
+            Descubrir más →
+          </a>
+        </div>
+
+        <!-- Arequipa -->
+        <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow duration-300">
+          <div class="bg-tertiary-100 h-32 sm:h-40 rounded-lg mb-4 flex items-center justify-center">
+            <span class="text-tertiary-600 font-medium text-center px-2">Arequipa</span>
+          </div>
+          <h4 class="text-lg font-semibold text-primary mb-2 font-heading">Arequipa</h4>
+          <p class="text-gray-600 text-sm font-body mb-4">Ciudad Blanca de los Volcanes</p>
+          <a href="sierra/sierra.html" class="inline-block text-secondary hover:text-secondary-600 font-medium text-sm transition-colors duration-200 font-heading">
+            Descubrir más →
+          </a>
+        </div>
+
+        <!-- Puerto Maldonado -->
+        <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow duration-300">
+          <div class="bg-green-100 h-32 sm:h-40 rounded-lg mb-4 flex items-center justify-center">
+            <span class="text-green-600 font-medium text-center px-2">Puerto Maldonado</span>
+          </div>
+          <h4 class="text-lg font-semibold text-primary mb-2 font-heading">Puerto Maldonado</h4>
+          <p class="text-gray-600 text-sm font-body mb-4">Capital de la biodiversidad</p>
+          <a href="selva/amazonia.html" class="inline-block text-secondary hover:text-secondary-600 font-medium text-sm transition-colors duration-200 font-heading">
+            Descubrir más →
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Travel Tips Section -->
+    <section class="mb-8 sm:mb-12">
+      <div class="bg-gradient-to-r from-primary-50 to-secondary-50 rounded-lg p-6 lg:p-8">
+        <h3 class="text-xl sm:text-2xl font-bold text-primary mb-4 sm:mb-6 text-center font-heading">
+          Consejos para tu Viaje
+        </h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+          <div class="bg-white p-4 rounded-lg shadow-sm">
+            <h4 class="font-semibold text-primary mb-2 text-sm sm:text-base font-heading">Mejor Época</h4>
+            <p class="text-xs sm:text-sm text-gray-600 font-body">Mayo a octubre para la mayoría de destinos</p>
+          </div>
+          <div class="bg-white p-4 rounded-lg shadow-sm">
+            <h4 class="font-semibold text-primary mb-2 text-sm sm:text-base font-heading">Moneda</h4>
+            <p class="text-xs sm:text-sm text-gray-600 font-body">Nuevo Sol Peruano (PEN)</p>
+          </div>
+          <div class="bg-white p-4 rounded-lg shadow-sm">
+            <h4 class="font-semibold text-primary mb-2 text-sm sm:text-base font-heading">Idioma</h4>
+            <p class="text-xs sm:text-sm text-gray-600 font-body">Español (oficial), Quechua, Aymara</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Back to Home Section -->
+  <section class="bg-gray-50 py-8 sm:py-12">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="mb-6">
+        <img src="../public/assets/images/LogoPeruvianTravel.png" alt="Peruvian Travel Logo" class="h-12 sm:h-16 w-auto mx-auto mb-4">
+      </div>
+      <h3 class="text-xl sm:text-2xl font-bold text-primary mb-3 sm:mb-4 font-heading">
+        ¿Listo para tu aventura peruana?
+      </h3>
+      <p class="text-base sm:text-lg text-gray-700 mb-4 sm:mb-6 font-body">
+        Explora la diversidad de destinos que Perú tiene para ofrecerte.
+      </p>
+      <a href="inicio.html" class="inline-block bg-secondary hover:bg-secondary-600 text-black px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 font-heading">
+        Volver al Inicio
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-primary/90 text-white py-8 sm:py-12">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+
+        <!-- Destinations -->
+        <div>
+          <h3 class="text-lg font-semibold mb-4 font-heading">Destinos</h3>
+          <ul class="space-y-2">
+            <li><a href="costa/costa.html" class="text-white/80 hover:text-white transition-colors duration-200 text-sm sm:text-base font-body">Costa</a></li>
+            <li><a href="sierra/sierra.html" class="text-white/80 hover:text-white transition-colors duration-200 text-sm sm:text-base font-body">Sierra</a></li>
+            <li><a href="selva/selva.html" class="text-white/80 hover:text-white transition-colors duration-200 text-sm sm:text-base font-body">Selva</a></li>
+          </ul>
+        </div>
+
+        <!-- Company Info -->
+        <div>
+          <h3 class="text-lg font-semibold mb-4 font-heading">Empresa</h3>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-white/80 hover:text-white transition-colors duration-200 text-sm sm:text-base font-body">Acerca de</a></li>
+            <li><a href="#" class="text-white/80 hover:text-white transition-colors duration-200 text-sm sm:text-base font-body">Contacto</a></li>
+            <li><a href="#" class="text-white/80 hover:text-white transition-colors duration-200 text-sm sm:text-base font-body">Blog</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div>
+          <h3 class="text-lg font-semibold mb-4 font-heading">Contacto</h3>
+          <div class="space-y-2 text-sm sm:text-base font-body">
+            <p class="text-white/80">Lima, Perú</p>
+            <p class="text-white/80">+51 999 999 999</p>
+            <p class="text-white/80">info@peruvian-travel.com</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Section -->
+      <div class="border-t border-white/20 mt-8 pt-6 sm:pt-8">
+        <div class="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
+          <p class="text-sm text-white/70 font-body">
+            © 2025 Peruvian Travel. Todos los derechos reservados.
+          </p>
+          <div class="flex space-x-6">
+            <a href="#" class="text-white/70 hover:text-white transition-colors duration-200 text-sm font-body">Términos de Uso</a>
+            <a href="#" class="text-white/70 hover:text-white transition-colors duration-200 text-sm font-body">Política de Privacidad</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript for mobile menu toggle -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const mobileMenuButton = document.getElementById('mobile-menu-button');
+      const closeMobileMenuButton = document.getElementById('close-mobile-menu');
+      const mobileMenu = document.getElementById('mobile-menu');
+
+      mobileMenuButton.addEventListener('click', function() {
+        mobileMenu.classList.toggle('hidden');
+      });
+
+      closeMobileMenuButton.addEventListener('click', function() {
+        mobileMenu.classList.add('hidden');
+      });
+
+      // Close mobile menu when clicking on a link
+      const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+      mobileMenuLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          mobileMenu.classList.add('hidden');
+        });
+      });
+
+      // Smooth scrolling for anchor links
+      const anchorLinks = document.querySelectorAll('a[href^="#"]');
+      anchorLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href').substring(1);
+          const targetElement = document.getElementById(targetId);
+          if (targetElement) {
+            targetElement.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
