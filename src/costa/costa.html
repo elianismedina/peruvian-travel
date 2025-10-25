@@ -73,6 +73,15 @@
     .sticky { position: sticky; }
     .top-0 { top: 0; }
     .z-50 { z-index: 50; }
+    
+    /* CLS Prevention - Hero overlay */
+    .hero-overlay {
+      position: absolute;
+      inset: 0px;
+      background-color: rgba(0, 0, 0, 0.4);
+      z-index: 2;
+      pointer-events: none;
+    }
   </style>
   <!-- Defer non-critical CSS -->
   <link href="../output.css" rel="stylesheet" media="print" onload="this.media='all'">
@@ -88,7 +97,7 @@
         <!-- Logo -->
         <div class="flex-shrink-0">
           <a href="inicio.html" class="flex items-center">
-            <img src="../../public/assets/images/LogoPeruvianTravel.png" alt="Peruvian Travel Logo" class="h-6 sm:h-7 md:h-8 w-auto">
+            <img src="../../public/assets/images/LogoPeruvianTravel.png" alt="Peruvian Travel Logo" class="h-6 sm:h-7 md:h-8 w-auto" width="497" height="57" style="aspect-ratio: 497/57;" loading="eager" decoding="sync">
           </a>
         </div>
 
@@ -152,7 +161,7 @@
         
         <!-- Logo at bottom -->
         <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2">
-          <img src="../../public/assets/images/LogoPeruvianTravel.png" alt="Peruvian Travel Logo" class="h-8 w-auto" width="200" height="48">
+          <img src="../../public/assets/images/LogoPeruvianTravel.png" alt="Peruvian Travel Logo" class="h-8 w-auto" width="497" height="57" style="aspect-ratio: 497/57;">
         </div>
       </div>
     </div>
@@ -170,7 +179,7 @@
          width="1920" 
          height="1080">
     <!-- Overlay for better text readability -->
-    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(0, 0, 0, 0.4); z-index: 2;"></div>
+    <div class="hero-overlay"></div>
     
     <!-- Hero Content -->
     <div class="hero-content" style="text-align: center; color: white; padding: 0 1rem; max-width: 64rem; margin: 0 auto; display: flex; flex-direction: column; justify-content: center; z-index: 10;">
@@ -264,7 +273,14 @@
   <section class="bg-gray-50 py-8 sm:py-12">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <div class="mb-6">
-        <img src="../../public/assets/images/LogoPeruvianTravel.png" alt="Peruvian Travel Logo" class="h-12 sm:h-16 w-auto mx-auto mb-4">
+        <img src="../../public/assets/images/LogoPeruvianTravel.png" 
+             alt="Peruvian Travel Logo" 
+             class="h-12 sm:h-16 w-auto mx-auto mb-4" 
+             width="497" 
+             height="57"
+             style="aspect-ratio: 497/57;"
+             loading="lazy"
+             decoding="async">
       </div>
       <p class="text-base sm:text-lg text-gray-700 font-body leading-relaxed max-w-2xl mx-auto">
         Descubre la diversidad cultural y natural de Perú a través de experiencias únicas e inolvidables.
