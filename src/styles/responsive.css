@@ -1,0 +1,314 @@
+/* Responsive Utilities for Peruvian Travel */
+
+/* Custom responsive breakpoints */
+@media (max-width: 639px) {
+  .container-mobile {
+    @apply px-4;
+  }
+  
+  .text-mobile {
+    @apply text-sm;
+  }
+  
+  .spacing-mobile {
+    @apply py-8;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 767px) {
+  .container-tablet {
+    @apply px-6;
+  }
+  
+  .text-tablet {
+    @apply text-base;
+  }
+  
+  .spacing-tablet {
+    @apply py-12;
+  }
+}
+
+@media (min-width: 768px) {
+  .container-desktop {
+    @apply px-8;
+  }
+  
+  .text-desktop {
+    @apply text-lg;
+  }
+  
+  .spacing-desktop {
+    @apply py-16;
+  }
+}
+
+/* Responsive Grid System */
+.responsive-grid {
+  @apply grid grid-cols-1 gap-4;
+}
+
+@media (min-width: 640px) {
+  .responsive-grid {
+    @apply grid-cols-2 gap-6;
+  }
+}
+
+@media (min-width: 1024px) {
+  .responsive-grid {
+    @apply grid-cols-3 gap-8;
+  }
+}
+
+/* Responsive Flexbox */
+.responsive-flex {
+  @apply flex flex-col;
+}
+
+@media (min-width: 768px) {
+  .responsive-flex {
+    @apply flex-row;
+  }
+}
+
+/* Responsive Typography */
+.responsive-heading {
+  @apply text-2xl font-bold;
+}
+
+@media (min-width: 640px) {
+  .responsive-heading {
+    @apply text-3xl;
+  }
+}
+
+@media (min-width: 1024px) {
+  .responsive-heading {
+    @apply text-4xl;
+  }
+}
+
+/* Responsive Spacing */
+.responsive-section {
+  @apply py-8 px-4;
+}
+
+@media (min-width: 640px) {
+  .responsive-section {
+    @apply py-12 px-6;
+  }
+}
+
+@media (min-width: 1024px) {
+  .responsive-section {
+    @apply py-16 px-8;
+  }
+}
+
+/* Responsive Cards */
+.responsive-card {
+  @apply bg-white rounded-lg shadow-lg p-4;
+}
+
+@media (min-width: 640px) {
+  .responsive-card {
+    @apply p-6;
+  }
+}
+
+/* Responsive Navigation */
+.nav-mobile {
+  @apply flex flex-col space-y-4;
+}
+
+.nav-desktop {
+  @apply hidden md:flex items-center space-x-8;
+}
+
+/* Responsive Images */
+.responsive-image {
+  @apply w-full h-48 object-cover;
+}
+
+@media (min-width: 640px) {
+  .responsive-image {
+    @apply h-64;
+  }
+}
+
+@media (min-width: 1024px) {
+  .responsive-image {
+    @apply h-80;
+  }
+}
+
+/* Responsive Buttons */
+.responsive-button {
+  @apply px-4 py-2 text-sm font-medium rounded-lg;
+}
+
+@media (min-width: 640px) {
+  .responsive-button {
+    @apply px-6 py-3 text-base;
+  }
+}
+
+/* Responsive Hero Section */
+.hero-responsive {
+  @apply h-screen flex items-center justify-center;
+}
+
+.hero-title {
+  @apply text-3xl font-bold mb-4;
+}
+
+@media (min-width: 640px) {
+  .hero-title {
+    @apply text-4xl mb-6;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-title {
+    @apply text-5xl mb-8;
+  }
+}
+
+/* Responsive Footer */
+.footer-responsive {
+  @apply py-8 px-4;
+}
+
+@media (min-width: 640px) {
+  .footer-responsive {
+    @apply py-12 px-6;
+  }
+}
+
+.footer-grid {
+  @apply grid grid-cols-1 gap-6;
+}
+
+@media (min-width: 640px) {
+  .footer-grid {
+    @apply grid-cols-2 gap-8;
+  }
+}
+
+@media (min-width: 1024px) {
+  .footer-grid {
+    @apply grid-cols-3;
+  }
+}
+
+/* Responsive Utilities */
+.hide-mobile {
+  @apply hidden sm:block;
+}
+
+.hide-desktop {
+  @apply block sm:hidden;
+}
+
+.show-mobile {
+  @apply block sm:hidden;
+}
+
+.show-desktop {
+  @apply hidden sm:block;
+}
+
+/* Responsive Text Sizes */
+.text-responsive-xs {
+  @apply text-xs sm:text-sm;
+}
+
+.text-responsive-sm {
+  @apply text-sm sm:text-base;
+}
+
+.text-responsive-base {
+  @apply text-base sm:text-lg;
+}
+
+.text-responsive-lg {
+  @apply text-lg sm:text-xl;
+}
+
+.text-responsive-xl {
+  @apply text-xl sm:text-2xl;
+}
+
+.text-responsive-2xl {
+  @apply text-2xl sm:text-3xl;
+}
+
+.text-responsive-3xl {
+  @apply text-3xl sm:text-4xl;
+}
+
+/* Responsive Margins and Padding */
+.p-responsive {
+  @apply p-4 sm:p-6 lg:p-8;
+}
+
+.m-responsive {
+  @apply m-4 sm:m-6 lg:m-8;
+}
+
+.px-responsive {
+  @apply px-4 sm:px-6 lg:px-8;
+}
+
+.py-responsive {
+  @apply py-4 sm:py-6 lg:py-8;
+}
+
+/* Responsive Container */
+.container-responsive {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+/* Responsive Aspect Ratios */
+.aspect-responsive {
+  @apply aspect-w-16 aspect-h-9;
+}
+
+@media (min-width: 640px) {
+  .aspect-responsive {
+    @apply aspect-w-4 aspect-h-3;
+  }
+}
+
+/* Responsive Shadows */
+.shadow-responsive {
+  @apply shadow-sm;
+}
+
+@media (min-width: 640px) {
+  .shadow-responsive {
+    @apply shadow-md;
+  }
+}
+
+@media (min-width: 1024px) {
+  .shadow-responsive {
+    @apply shadow-lg;
+  }
+}
+
+/* Responsive Transitions */
+.transition-responsive {
+  @apply transition-all duration-300 ease-in-out;
+}
+
+/* Responsive Hover Effects */
+.hover-responsive {
+  @apply hover:shadow-lg hover:-translate-y-1;
+}
+
+@media (min-width: 1024px) {
+  .hover-responsive {
+    @apply hover:shadow-xl hover:-translate-y-2;
+  }
+}

@@ -7,21 +7,19 @@
   <meta name="description" content="Descubre la diversidad de Perú: Costa, Sierra y Selva. Explora playas paradisíacas, majestuosos Andes y la exuberante Amazonía. Tu aventura peruana comienza aquí.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!-- Preload critical fonts to prevent layout shift -->
-  <link rel="preload" href="https://fonts.gstatic.com/s/cinzel/v26/8vIJ7ww63….woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="https://fonts.gstatic.com/s/merriweather/v33/u-4t0qyri….woff2" as="font" type="font/woff2" crossorigin>
+  <!-- Google Fonts will be loaded via the main stylesheet -->
   <!-- Preload LCP image for maximum performance -->
   <link rel="preload" href="https://res.cloudinary.com/dxa54qfxx/image/upload/v1758384876/machupichu_kdibgw.webp" as="image" type="image/webp">
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-  <noscript><link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" rel="stylesheet"></noscript>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" rel="stylesheet">
   <!-- Critical CSS loaded inline for immediate render -->
   <link href="./critical.css" rel="stylesheet">
   
   <!-- Non-critical CSS loaded asynchronously -->
   <link href="./output.css" rel="stylesheet" media="print" onload="this.media='all'">
+  <link href="./styles/responsive.css" rel="stylesheet">
   <noscript><link href="./output.css" rel="stylesheet"></noscript>
 </head>
-<body class="bg-gray-100 min-h-screen">
+<body class="bg-gray-100 min-h-screen flex flex-col">
   <!-- Navigation Bar -->
   <nav class="bg-white shadow-lg sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -99,99 +97,102 @@
     </div>
   </nav>
 
-  <!-- Hero Section -->
-  <section style="position: relative; height: 100vh; display: flex; align-items: center; justify-content: center; overflow: hidden; background-image: url('https://res.cloudinary.com/dxa54qfxx/image/upload/v1758384876/machupichu_kdibgw.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;">
-    <!-- LCP Image with high priority -->
-    <img src="https://res.cloudinary.com/dxa54qfxx/image/upload/v1758384876/machupichu_kdibgw.webp" 
-         alt="Machu Picchu - Maravilla del mundo" 
-         style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1;"
-         fetchpriority="high" 
-         loading="eager"
-         width="1920" 
-         height="1080">
-    <!-- Overlay for better text readability -->
-    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(0, 0, 0, 0.4);"></div>
-    
-    <!-- Hero Content -->
-    <div style="position: relative; z-index: 10; text-align: center; color: white; padding: 0 1rem; max-width: 64rem; margin: 0 auto;">
-      <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 leading-tight px-2 font-heading">
-        Explora la diversidad de Perú
-      </h1>
-      <h2 class="text-lg sm:text-xl md:text-2xl lg:text-3xl font-medium mb-6 sm:mb-8 opacity-90 px-4 font-heading">
-        Conoce las maravillas de un país mágico y lleno de tesoros
-      </h2>
-      
-      <!-- Hero CTA Buttons -->
-      <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-4">
-        <a href="#" class="bg-secondary hover:bg-secondary-600 text-black px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 w-full sm:w-auto text-center font-heading">
-          Descubre Destinos
-        </a>
-        <a href="#" class="border-2 border-white text-white hover:bg-white hover:text-primary px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-semibold transition-all duration-300 w-full sm:w-auto text-center font-heading">
-          Planifica tu Viaje
-        </a>
-      </div>
-    </div>
-    
-    <!-- Scroll Indicator -->
-    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
-      <div class="animate-bounce">
-        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-        </svg>
-      </div>
-    </div>
-  </section>
-
   <!-- Main Content -->
-  <div class="max-w-4xl mx-auto p-4 sm:p-6 lg:p-8">
-    <section class="text-center mb-8 sm:mb-12">
-      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary-700 mb-3 sm:mb-4 font-heading">
-        Bienvenido a Peruvian Travel
-      </h2>
-      <p class="text-base sm:text-lg text-gray-700 px-4 font-body">
-        Descubre la riqueza cultural y natural de Perú a través de sus tres regiones únicas.
-      </p>
+  <main>
+    <!-- Hero Section -->
+    <section style="position: relative; height: 100vh; display: flex; align-items: center; justify-content: center; overflow: hidden; background-image: url('https://res.cloudinary.com/dxa54qfxx/image/upload/v1758384876/machupichu_kdibgw.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+      <!-- LCP Image with high priority -->
+      <img src="https://res.cloudinary.com/dxa54qfxx/image/upload/v1758384876/machupichu_kdibgw.webp" 
+           alt="Machu Picchu - Maravilla del mundo" 
+           style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1;"
+           fetchpriority="high" 
+           loading="eager"
+           width="1920" 
+           height="1080">
+      <!-- Overlay for better text readability -->
+      <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(0, 0, 0, 0.4);"></div>
+      
+      <!-- Hero Content -->
+      <div style="position: relative; z-index: 10; text-align: center; color: white; padding: 0 1rem; max-width: 64rem; margin: 0 auto;">
+        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 leading-tight px-2 font-heading">
+          Explora la diversidad de Perú
+        </h1>
+        <h2 class="text-lg sm:text-xl md:text-2xl lg:text-3xl font-medium mb-6 sm:mb-8 opacity-90 px-4 font-heading">
+          Conoce las maravillas de un país mágico y lleno de tesoros
+        </h2>
+        
+        <!-- Hero CTA Buttons -->
+        <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-4">
+          <a href="#" class="bg-secondary hover:bg-secondary-600 text-black px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 w-full sm:w-auto text-center font-heading">
+            Descubre Destinos
+          </a>
+          <a href="#" class="border-2 border-white text-white hover:bg-white hover:text-primary px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-semibold transition-all duration-300 w-full sm:w-auto text-center font-heading">
+            Planifica tu Viaje
+          </a>
+        </div>
+      </div>
+      
+      <!-- Scroll Indicator -->
+      <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
+        <div class="animate-bounce">
+          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+          </svg>
+        </div>
+      </div>
     </section>
 
-    <!-- Placeholder Content -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-8 sm:mb-12">
-      <div class="bg-white rounded-lg p-4 sm:p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
-        <h3 class="text-lg sm:text-xl font-semibold text-primary-700 mb-2 sm:mb-3 font-heading">Costa</h3>
-        <p class="text-sm sm:text-base text-gray-700 mb-3 sm:mb-4 font-body">Explora las playas del Pacífico y la rica historia costera.</p>
-        <a href="costa/costa.html" class="inline-block text-secondary-700 hover:text-secondary-800 font-medium text-sm sm:text-base transition-colors duration-200 font-heading">
-          Descubrir más →
-        </a>
+    <!-- Welcome Section -->
+    <section class="max-w-4xl mx-auto p-4 sm:p-6 lg:p-8">
+      <div class="text-center mb-8 sm:mb-12">
+        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary-700 mb-3 sm:mb-4 font-heading">
+          Bienvenido a Peruvian Travel
+        </h2>
+        <p class="text-base sm:text-lg text-gray-700 px-4 font-body">
+          Descubre la riqueza cultural y natural de Perú a través de sus tres regiones únicas.
+        </p>
       </div>
-      
-      <div class="bg-white rounded-lg p-4 sm:p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
-        <h3 class="text-lg sm:text-xl font-semibold text-primary-700 mb-2 sm:mb-3 font-heading">Sierra</h3>
-        <p class="text-sm sm:text-base text-gray-700 mb-3 sm:mb-4 font-body">Vive la majestuosidad de los Andes y la cultura andina.</p>
-        <a href="sierra/sierra.html" class="inline-block text-secondary-700 hover:text-secondary-800 font-medium text-sm sm:text-base transition-colors duration-200 font-heading">
-          Descubrir más →
-        </a>
-      </div>
-      
-      <div class="bg-white rounded-lg p-4 sm:p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 sm:col-span-2 lg:col-span-1">
-        <h3 class="text-lg sm:text-xl font-semibold text-primary-700 mb-2 sm:mb-3 font-heading">Selva</h3>
-        <p class="text-sm sm:text-base text-gray-700 mb-3 sm:mb-4 font-body">Adéntrate en la biodiversidad amazónica única del mundo.</p>
-        <a href="selva/selva.html" class="inline-block text-secondary-700 hover:text-secondary-800 font-medium text-sm sm:text-base transition-colors duration-200 font-heading">
-          Descubrir más →
-        </a>
-      </div>
-    </div>
-  </div>
 
-  <!-- Logo Section -->
-  <section class="bg-gray-50 py-8 sm:py-12">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <div class="mb-6">
-        <img src="../public/assets/images/LogoPeruvianTravel.png" alt="Peruvian Travel Logo" class="h-12 sm:h-16 w-auto mx-auto mb-4" width="200" height="48">
+      <!-- Regions Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-8 sm:mb-12">
+        <article class="bg-white rounded-lg p-4 sm:p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+          <h3 class="text-lg sm:text-xl font-semibold text-primary-700 mb-2 sm:mb-3 font-heading">Costa</h3>
+          <p class="text-sm sm:text-base text-gray-700 mb-3 sm:mb-4 font-body">Explora las playas del Pacífico y la rica historia costera.</p>
+          <a href="costa/costa.html" class="inline-block text-secondary-700 hover:text-secondary-800 font-medium text-sm sm:text-base transition-colors duration-200 font-heading">
+            Descubrir más →
+          </a>
+        </article>
+        
+        <article class="bg-white rounded-lg p-4 sm:p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+          <h3 class="text-lg sm:text-xl font-semibold text-primary-700 mb-2 sm:mb-3 font-heading">Sierra</h3>
+          <p class="text-sm sm:text-base text-gray-700 mb-3 sm:mb-4 font-body">Vive la majestuosidad de los Andes y la cultura andina.</p>
+          <a href="sierra/sierra.html" class="inline-block text-secondary-700 hover:text-secondary-800 font-medium text-sm sm:text-base transition-colors duration-200 font-heading">
+            Descubrir más →
+          </a>
+        </article>
+        
+        <article class="bg-white rounded-lg p-4 sm:p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 sm:col-span-2 lg:col-span-1">
+          <h3 class="text-lg sm:text-xl font-semibold text-primary-700 mb-2 sm:mb-3 font-heading">Selva</h3>
+          <p class="text-sm sm:text-base text-gray-700 mb-3 sm:mb-4 font-body">Adéntrate en la biodiversidad amazónica única del mundo.</p>
+          <a href="selva/selva.html" class="inline-block text-secondary-700 hover:text-secondary-800 font-medium text-sm sm:text-base transition-colors duration-200 font-heading">
+            Descubrir más →
+          </a>
+        </article>
       </div>
-      <p class="text-base sm:text-lg text-gray-700 font-body leading-relaxed max-w-2xl mx-auto">
-        Descubre la diversidad cultural y natural de Perú a través de experiencias únicas e inolvidables.
-      </p>
-    </div>
-  </section>
+    </section>
+
+    <!-- Logo Section -->
+    <section class="bg-gray-50 py-8 sm:py-12">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="mb-6">
+          <img src="../public/assets/images/LogoPeruvianTravel.png" alt="Peruvian Travel Logo" class="h-12 sm:h-16 w-auto mx-auto mb-4" width="200" height="48">
+        </div>
+        <p class="text-base sm:text-lg text-gray-700 font-body leading-relaxed max-w-2xl mx-auto">
+          Descubre la diversidad cultural y natural de Perú a través de experiencias únicas e inolvidables.
+        </p>
+      </div>
+    </section>
+  </main>
 
   <!-- Footer -->
   <footer class="bg-primary/90 text-white py-8 sm:py-12">
@@ -251,25 +252,33 @@
       const closeMobileMenuButton = document.getElementById('close-mobile-menu');
       const mobileMenu = document.getElementById('mobile-menu');
 
-      mobileMenuButton.addEventListener('click', function() {
-        mobileMenu.classList.toggle('hidden');
-        const isExpanded = !mobileMenu.classList.contains('hidden');
-        mobileMenuButton.setAttribute('aria-expanded', isExpanded);
-      });
+      if (mobileMenuButton && mobileMenu) {
+        mobileMenuButton.addEventListener('click', function() {
+          console.log('Mobile menu button clicked'); // Debug
+          mobileMenu.classList.toggle('hidden');
+          const isExpanded = !mobileMenu.classList.contains('hidden');
+          mobileMenuButton.setAttribute('aria-expanded', isExpanded);
+        });
+      }
 
-      closeMobileMenuButton.addEventListener('click', function() {
-        mobileMenu.classList.add('hidden');
-        mobileMenuButton.setAttribute('aria-expanded', 'false');
-      });
-
-      // Close mobile menu when clicking on a link
-      const mobileMenuLinks = mobileMenu.querySelectorAll('a');
-      mobileMenuLinks.forEach(link => {
-        link.addEventListener('click', function() {
+      if (closeMobileMenuButton && mobileMenu) {
+        closeMobileMenuButton.addEventListener('click', function() {
+          console.log('Close mobile menu button clicked'); // Debug
           mobileMenu.classList.add('hidden');
           mobileMenuButton.setAttribute('aria-expanded', 'false');
         });
-      });
+      }
+
+      // Close mobile menu when clicking on a link
+      if (mobileMenu) {
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+        mobileMenuLinks.forEach(link => {
+          link.addEventListener('click', function() {
+            mobileMenu.classList.add('hidden');
+            mobileMenuButton.setAttribute('aria-expanded', 'false');
+          });
+        });
+      }
     });
   </script>
 </body>

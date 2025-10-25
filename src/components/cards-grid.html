@@ -1,0 +1,42 @@
+<!-- Cards Grid Component -->
+<section class="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto">
+    <!-- Section Header -->
+    <div class="text-center mb-8 sm:mb-12">
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary-700 mb-3 sm:mb-4 font-heading">
+        {{ section_title }}
+      </h2>
+      <p class="text-base sm:text-lg text-gray-700 max-w-3xl mx-auto font-body">
+        {{ section_description }}
+      </p>
+    </div>
+
+    <!-- Cards Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+      {% for card in cards %}
+      <article class="bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+        <!-- Card Image -->
+        <div class="aspect-w-16 aspect-h-9">
+          <img src="{{ card.image }}" 
+               alt="{{ card.image_alt }}" 
+               class="w-full h-48 object-cover">
+        </div>
+        
+        <!-- Card Content -->
+        <div class="p-4 sm:p-6">
+          <h3 class="text-lg sm:text-xl font-semibold text-primary-700 mb-2 sm:mb-3 font-heading">
+            {{ card.title }}
+          </h3>
+          <p class="text-sm sm:text-base text-gray-700 mb-3 sm:mb-4 font-body">
+            {{ card.description }}
+          </p>
+          <a href="{{ card.link }}" 
+             class="inline-block text-secondary-700 hover:text-secondary-800 font-medium text-sm sm:text-base transition-colors duration-200 font-heading">
+            {{ card.link_text }} →
+          </a>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
