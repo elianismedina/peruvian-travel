@@ -135,7 +135,7 @@
         <!-- Logo -->
         <div class="flex-shrink-0">
           <a href="inicio.html" class="flex items-center">
-            <img src="../public/assets/images/LogoPeruvianTravel.png" alt="Peruvian Travel Logo" class="h-6 sm:h-7 md:h-8 w-auto" width="497" height="57" style="aspect-ratio: 497/57;">
+            <img src="../public/assets/images/LogoPeruvianTravel.png" alt="Peruvian Travel Logo" class="h-6 sm:h-7 md:h-8 w-auto" width="497" height="57" style="aspect-ratio: 497/57;" loading="eager" decoding="sync">
           </a>
         </div>
 
@@ -300,9 +300,8 @@
                width="497" 
                height="57"
                style="aspect-ratio: 497/57;"
-               loading="eager"
-               fetchpriority="high"
-               decoding="sync">
+               loading="lazy"
+               decoding="async">
         </div>
         <p class="text-base sm:text-lg text-gray-700 font-body leading-relaxed max-w-2xl mx-auto">
           Descubre la diversidad cultural y natural de Perú a través de experiencias únicas e inolvidables.
