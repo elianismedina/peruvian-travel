@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <!-- Google Fonts will be loaded via the main stylesheet -->
   <!-- Preload LCP image for maximum performance -->
-  <link rel="preload" href="https://res.cloudinary.com/dxa54qfxx/image/upload/v1758384876/machupichu_kdibgw.webp" as="image" type="image/webp">
+  <link rel="preload" href="https://res.cloudinary.com/dxa54qfxx/image/upload/v1758384876/machupichu_kdibgw.webp" as="image" type="image/webp" fetchpriority="high">
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" rel="stylesheet"></noscript>
   <style>
@@ -215,6 +215,7 @@
            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1;"
            fetchpriority="high" 
            loading="eager"
+           decoding="sync"
            width="1920" 
            height="1080">
       <!-- Overlay for better text readability -->
@@ -299,7 +300,9 @@
                width="200" 
                height="48"
                style="aspect-ratio: 200/48;"
-               loading="eager">
+               loading="eager"
+               fetchpriority="high"
+               decoding="sync">
         </div>
         <p class="text-base sm:text-lg text-gray-700 font-body leading-relaxed max-w-2xl mx-auto">
           Descubre la diversidad cultural y natural de Perú a través de experiencias únicas e inolvidables.
