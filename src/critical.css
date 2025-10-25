@@ -9,6 +9,26 @@ body {
   min-height: 100vh; 
 }
 
+/* Layout shift prevention */
+.logo-container {
+  min-height: 3rem; /* Reserve space for logo */
+}
+
+.hero-content {
+  min-height: 100vh; /* Reserve space for hero section */
+}
+
+/* Image optimization to prevent layout shift */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Reserve space for specific logo sizes */
+.logo-sm { min-height: 1.5rem; }
+.logo-md { min-height: 2rem; }
+.logo-lg { min-height: 3rem; }
+
 /* Layout utilities */
 .bg-gray-100 { background-color: #f3f4f6; }
 .min-h-screen { min-height: 100vh; }
