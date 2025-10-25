@@ -1,0 +1,160 @@
+/* Critical CSS for above-the-fold content - Peruvian Travel */
+/* This file contains only the essential styles needed for initial render */
+
+/* Base styles */
+body { 
+  margin: 0; 
+  font-family: 'Merriweather', serif; 
+  background-color: #f3f4f6; 
+  min-height: 100vh; 
+}
+
+/* Layout utilities */
+.bg-gray-100 { background-color: #f3f4f6; }
+.min-h-screen { min-height: 100vh; }
+.bg-white { background-color: #ffffff; }
+
+/* Navigation styles */
+.shadow-lg { 
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1); 
+}
+.sticky { position: sticky; }
+.top-0 { top: 0; }
+.z-50 { z-index: 50; }
+
+/* Flexbox utilities */
+.flex { display: flex; }
+.justify-between { justify-content: space-between; }
+.justify-center { justify-content: center; }
+.items-center { align-items: center; }
+.items-baseline { align-items: baseline; }
+
+/* Sizing */
+.h-16 { height: 4rem; }
+.h-6 { height: 1.5rem; }
+.h-8 { height: 2rem; }
+.w-6 { width: 1.5rem; }
+.w-8 { width: 2rem; }
+.w-auto { width: auto; }
+
+/* Container */
+.max-w-7xl { max-width: 80rem; }
+.mx-auto { margin-left: auto; margin-right: auto; }
+
+/* Spacing */
+.px-4 { padding-left: 1rem; padding-right: 1rem; }
+.py-2 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+.p-2 { padding: 0.5rem; }
+
+/* Responsive spacing */
+@media (min-width: 640px) {
+  .sm\:px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
+  .sm\:py-4 { padding-top: 1rem; padding-bottom: 1rem; }
+}
+
+@media (min-width: 1024px) {
+  .lg\:px-8 { padding-left: 2rem; padding-right: 2rem; }
+}
+
+/* Typography */
+.font-heading { font-family: 'Cinzel', serif; }
+.font-body { font-family: 'Merriweather', serif; }
+.text-sm { font-size: 0.875rem; line-height: 1.25rem; }
+.text-base { font-size: 1rem; line-height: 1.5rem; }
+.font-medium { font-weight: 500; }
+.font-semibold { font-weight: 600; }
+.font-bold { font-weight: 700; }
+
+/* Colors */
+.text-primary-700 { color: #7f1d1d; }
+.text-primary-800 { color: #5f1a1a; }
+.text-white { color: #ffffff; }
+.text-white\/90 { color: rgba(255, 255, 255, 0.9); }
+.text-secondary-700 { color: #92400e; }
+.text-secondary-800 { color: #78350f; }
+.text-gray-700 { color: #374151; }
+
+/* Background colors */
+.bg-secondary-700 { background-color: #92400e; }
+.bg-secondary-800 { background-color: #78350f; }
+.bg-tertiary-700 { background-color: #14532d; }
+.bg-tertiary-800 { background-color: #0f3d1a; }
+.bg-green-700 { background-color: #15803d; }
+.bg-green-800 { background-color: #166534; }
+
+/* Transitions */
+.transition-colors { 
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke; 
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); 
+  transition-duration: 150ms; 
+}
+.duration-200 { transition-duration: 200ms; }
+.duration-300 { transition-duration: 300ms; }
+
+/* Hover states */
+.hover\:text-primary-800:hover { color: #5f1a1a; }
+.hover\:text-white:hover { color: #ffffff; }
+.hover\:bg-secondary-800:hover { background-color: #78350f; }
+.hover\:bg-tertiary-800:hover { background-color: #0f3d1a; }
+.hover\:bg-green-800:hover { background-color: #166534; }
+
+/* Display utilities */
+.hidden { display: none; }
+.block { display: block; }
+.inline-block { display: inline-block; }
+
+/* Responsive display */
+@media (min-width: 768px) {
+  .md\:block { display: block; }
+  .md\:hidden { display: none; }
+}
+
+/* Focus states */
+.focus\:outline-none:focus { outline: 2px solid transparent; outline-offset: 2px; }
+.focus\:ring-2:focus { box-shadow: 0 0 0 2px #7f1d1d; }
+
+/* Border radius */
+.rounded-lg { border-radius: 0.5rem; }
+
+/* Shadows */
+.shadow-md { 
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1); 
+}
+.hover\:shadow-lg:hover { 
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1); 
+}
+
+/* Hero section styles */
+.absolute { position: absolute; }
+.relative { position: relative; }
+.inset-0 { top: 0; right: 0; bottom: 0; left: 0; }
+.left-1\/2 { left: 50%; }
+.bottom-8 { bottom: 2rem; }
+.-translate-x-1\/2 { transform: translateX(-50%); }
+.z-10 { z-index: 10; }
+
+/* Text alignment */
+.text-center { text-align: center; }
+
+/* Animation */
+.animate-bounce { 
+  animation: bounce 1s infinite; 
+}
+
+@keyframes bounce {
+  0%, 20%, 53%, 80%, 100% {
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    transform: translate3d(0,0,0);
+  }
+  40%, 43% {
+    animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+    transform: translate3d(0, -30px, 0);
+  }
+  70% {
+    animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+    transform: translate3d(0, -15px, 0);
+  }
+  90% {
+    transform: translate3d(0,-4px,0);
+  }
+}
