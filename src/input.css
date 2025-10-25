@@ -6,49 +6,65 @@
   --font-body: "Merriweather", serif;
 }
 
-/* Custom color palette */
+/* Custom color palette - WCAG AA Compliant */
 @theme {
-  --color-primary: #D91023;
+  /* Primary Red - Enhanced for better contrast */
+  --color-primary: #B91C1C; /* Darker red for better contrast */
   --color-primary-50: #fef2f2;
   --color-primary-100: #fee2e2;
   --color-primary-200: #fecaca;
   --color-primary-300: #fca5a5;
   --color-primary-400: #f87171;
-  --color-primary-500: #D91023;
-  --color-primary-600: #dc2626;
-  --color-primary-700: #b91c1c;
-  --color-primary-800: #991b1b;
-  --color-primary-900: #7f1d1d;
-  --color-primary-950: #450a0a;
+  --color-primary-500: #B91C1C; /* Updated for better contrast */
+  --color-primary-600: #991b1b; /* Darker for better contrast */
+  --color-primary-700: #7f1d1d; /* Even darker for better contrast */
+  --color-primary-800: #5f1a1a;
+  --color-primary-900: #3f1a1a;
+  --color-primary-950: #2d0f0f;
 
-  --color-secondary: #FDB813;
+  /* Secondary Gold - Enhanced for better contrast */
+  --color-secondary: #D97706; /* Darker gold for better contrast */
   --color-secondary-50: #fffbeb;
   --color-secondary-100: #fef3c7;
   --color-secondary-200: #fde68a;
   --color-secondary-300: #fcd34d;
   --color-secondary-400: #fbbf24;
-  --color-secondary-500: #FDB813;
-  --color-secondary-600: #d97706;
-  --color-secondary-700: #b45309;
-  --color-secondary-800: #92400e;
-  --color-secondary-900: #78350f;
-  --color-secondary-950: #451a03;
+  --color-secondary-500: #D97706; /* Updated for better contrast */
+  --color-secondary-600: #b45309; /* Darker for better contrast */
+  --color-secondary-700: #92400e; /* Even darker for better contrast */
+  --color-secondary-800: #78350f;
+  --color-secondary-900: #451a03;
+  --color-secondary-950: #2d0f0f;
 
-  --color-tertiary: #3A8E4F;
+  /* Tertiary Green - Enhanced for better contrast */
+  --color-tertiary: #15803d; /* Darker green for better contrast */
   --color-tertiary-50: #f0fdf4;
   --color-tertiary-100: #dcfce7;
   --color-tertiary-200: #bbf7d0;
   --color-tertiary-300: #86efac;
   --color-tertiary-400: #4ade80;
-  --color-tertiary-500: #3A8E4F;
-  --color-tertiary-600: #16a34a;
-  --color-tertiary-700: #15803d;
-  --color-tertiary-800: #166534;
-  --color-tertiary-900: #14532d;
-  --color-tertiary-950: #052e16;
+  --color-tertiary-500: #15803d; /* Updated for better contrast */
+  --color-tertiary-600: #166534; /* Darker for better contrast */
+  --color-tertiary-700: #14532d; /* Even darker for better contrast */
+  --color-tertiary-800: #0f3d1a;
+  --color-tertiary-900: #0a2e12;
+  --color-tertiary-950: #051f0a;
 
-  /* White is already defined as a standard color in Tailwind */
+  /* Enhanced Gray Scale for better contrast */
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d1d5db;
+  --color-gray-400: #9ca3af;
+  --color-gray-500: #6b7280;
+  --color-gray-600: #4b5563; /* Enhanced for better contrast */
+  --color-gray-700: #374151; /* Enhanced for better contrast */
+  --color-gray-800: #1f2937;
+  --color-gray-900: #111827;
+
+  /* White and Black */
   --color-white: #FFFFFF;
+  --color-black: #000000;
 }
 
 /* Additional utility classes for navigation */
@@ -148,5 +164,59 @@
 
   .font-body {
     font-family: var(--font-body);
+  }
+
+  /* WCAG AA Compliant Text Colors */
+  .text-primary-wcag {
+    color: var(--color-primary-700); /* Darker for better contrast */
+  }
+
+  .text-secondary-wcag {
+    color: var(--color-secondary-700); /* Darker for better contrast */
+  }
+
+  .text-tertiary-wcag {
+    color: var(--color-tertiary-700); /* Darker for better contrast */
+  }
+
+  .text-gray-wcag {
+    color: var(--color-gray-700); /* Enhanced gray for better contrast */
+  }
+
+  /* WCAG Compliant Background Colors */
+  .bg-primary-wcag {
+    background-color: var(--color-primary-700);
+  }
+
+  .bg-secondary-wcag {
+    background-color: var(--color-secondary-700);
+  }
+
+  .bg-tertiary-wcag {
+    background-color: var(--color-tertiary-700);
+  }
+
+  /* High Contrast Focus States */
+  .focus\:ring-2:focus {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 2px var(--color-primary-600);
+  }
+
+  .focus\:ring-primary:focus {
+    box-shadow: 0 0 0 2px var(--color-primary-600);
+  }
+
+  /* Enhanced hover states for better visibility */
+  .hover\:text-primary-wcag:hover {
+    color: var(--color-primary-800);
+  }
+
+  .hover\:text-secondary-wcag:hover {
+    color: var(--color-secondary-800);
+  }
+
+  .hover\:text-tertiary-wcag:hover {
+    color: var(--color-tertiary-800);
   }
 }
