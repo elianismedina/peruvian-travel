@@ -57,12 +57,40 @@
       gap: 0.75rem;
       justify-content: center;
       align-items: center;
+      position: relative;
+      z-index: 10;
     }
     
     @media (min-width: 640px) {
       .hero-buttons {
         flex-direction: row;
         gap: 1rem;
+      }
+    }
+    
+    /* Mobile-specific CLS prevention */
+    @media (max-width: 639px) {
+      .hero-section {
+        min-height: 100vh;
+        height: 100vh;
+      }
+      
+      .hero-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        transform: translate3d(0, 0, 0);
+      }
+      
+      .hero-content {
+        position: relative;
+        z-index: 10;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
       }
     }
     
@@ -91,16 +119,16 @@
     
     /* CLS Prevention - Hero overlay */
     .hero-overlay {
-      content: '';
       position: absolute;
       top: 0;
-      right: 0;
-      bottom: 0;
       left: 0;
+      width: 100%;
+      height: 100%;
       background-color: rgba(0, 0, 0, 0.4);
       z-index: 2;
       pointer-events: none;
-      will-change: opacity;
+      transform: translateZ(0);
+      backface-visibility: hidden;
     }
   </style>
   <!-- Defer non-critical CSS -->
@@ -202,7 +230,7 @@
     <div class="hero-overlay"></div>
     
     <!-- Hero Content -->
-    <div class="hero-content" style="text-align: center; color: white; padding: 0 1rem; max-width: 64rem; margin: 0 auto; display: flex; flex-direction: column; justify-content: center; z-index: 10;">
+    <div class="hero-content" style="text-align: center; color: white; padding: 0 1rem; max-width: 64rem; margin: 0 auto;">
       <h1 class="hero-title font-heading mb-4 sm:mb-6 px-2">
         Costa Peruana
       </h1>
