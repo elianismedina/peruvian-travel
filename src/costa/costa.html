@@ -115,9 +115,11 @@
     .h-16 { height: 4rem; }
     .flex-shrink-0 { flex-shrink: 0; }
     .hidden { display: none; }
-    .md\:block { display: block; }
-    .md\:flex { display: flex; }
-    .md\:hidden { display: none; }
+    @media (min-width: 768px) {
+      .md\:block { display: block; }
+      .md\:flex { display: flex; }
+      .md\:hidden { display: none; }
+    }
     .text-primary-700 { color: #1d4ed8; }
     .hover\:text-primary-700:hover { color: #1e40af; }
     .px-3 { padding-left: 0.75rem; padding-right: 0.75rem; }
@@ -136,6 +138,13 @@
     .h-6 { height: 1.5rem; }
     .w-6 { width: 1.5rem; }
     .w-auto { width: auto; }
+    .mx-auto { margin-left: auto; margin-right: auto; }
+    .text-center { text-align: center; }
+    .p-8 { padding: 2rem; }
+    .flex-1 { flex: 1 1 0%; }
+    .relative { position: relative; }
+    .bg-black { background-color: #000; }
+    .bg-opacity-50 { background-color: rgba(0, 0, 0, 0.5); }
     .h-auto { height: auto; }
     .sm\:h-7 { height: 1.75rem; }
     .md\:h-8 { height: 2rem; }
@@ -275,7 +284,7 @@
       <div class="flex justify-between items-center h-16">
         <!-- Logo -->
         <div class="flex-shrink-0">
-          <a href="inicio.html" class="flex items-center">
+          <a href="../inicio.html" class="flex items-center">
             <img src="../../public/assets/images/LogoPeruvianTravel.png" alt="Peruvian Travel Logo" class="h-6 sm:h-7 md:h-8 w-auto" width="497" height="57" style="aspect-ratio: 497/57;" loading="eager" decoding="sync">
           </a>
         </div>
@@ -312,35 +321,41 @@
       </div>
 
       <!-- Mobile Navigation Menu -->
-      <div id="mobile-menu" class="md:hidden hidden fixed inset-0 z-50 bg-gradient-to-b from-tertiary to-secondary">
-        <!-- Close button -->
-        <div class="flex justify-end p-4">
-          <button id="close-mobile-menu" type="button" class="text-white hover:text-gray-200 focus:outline-none" aria-label="Cerrar menú de navegación">
-            <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
-        </div>
+      <div id="mobile-menu" class="md:hidden hidden fixed inset-0 z-50">
+        <!-- Overlay Background -->
+        <div class="fixed inset-0 bg-black bg-opacity-50"></div>
         
-        <!-- Menu items centered -->
-        <div class="flex flex-col items-center justify-center h-full -mt-16 space-y-8">
-          <a href="../inicio.html" class="text-white text-xl font-medium transition-colors duration-200 font-heading">
-            Inicio
-          </a>
-          <a href="costa.html" class="text-white text-xl font-medium transition-colors duration-200 font-heading">
-            Costa
-          </a>
-          <a href="../sierra/sierra.html" class="text-white text-xl font-medium transition-colors duration-200 font-heading">
-            Sierra
-          </a>
-          <a href="../selva/selva.html" class="text-white text-xl font-medium transition-colors duration-200 font-heading">
-            Selva
-          </a>
-        </div>
-        
-        <!-- Logo at bottom -->
-        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2">
-          <img src="../../public/assets/images/LogoPeruvianTravel.png" alt="Peruvian Travel Logo" class="h-8 w-auto" width="497" height="57" style="aspect-ratio: 497/57;">
+        <!-- Menu Content -->
+        <div class="relative z-10 flex flex-col h-full bg-gradient-to-b from-tertiary to-secondary">
+          <!-- Close button -->
+          <div class="flex justify-end p-4">
+            <button id="close-mobile-menu" type="button" class="text-white hover:text-gray-200 focus:outline-none p-2" aria-label="Cerrar menú de navegación">
+              <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+          
+          <!-- Menu items centered -->
+          <div class="flex flex-col items-center justify-center flex-1 space-y-8">
+            <a href="../inicio.html" class="text-white text-xl font-medium transition-colors duration-200 font-heading">
+              Inicio
+            </a>
+            <a href="costa.html" class="text-white text-xl font-medium transition-colors duration-200 font-heading">
+              Costa
+            </a>
+            <a href="../sierra/sierra.html" class="text-white text-xl font-medium transition-colors duration-200 font-heading">
+              Sierra
+            </a>
+            <a href="../selva/selva.html" class="text-white text-xl font-medium transition-colors duration-200 font-heading">
+              Selva
+            </a>
+          </div>
+          
+          <!-- Logo at bottom -->
+          <div class="p-8 text-center">
+            <img src="../../public/assets/images/LogoPeruvianTravel.png" alt="Peruvian Travel Logo" class="h-8 w-auto mx-auto" width="497" height="57" style="aspect-ratio: 497/57;">
+          </div>
         </div>
       </div>
     </div>

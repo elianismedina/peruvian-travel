@@ -17,7 +17,7 @@
       <div class="flex justify-between items-center h-16">
         <!-- Logo -->
         <div class="flex-shrink-0">
-          <a href="inicio.html" class="flex items-center">
+          <a href="../inicio.html" class="flex items-center">
             <img src="../../public/assets/images/LogoPeruvianTravel.png" alt="Peruvian Travel Logo" class="h-6 sm:h-7 md:h-8 w-auto">
           </a>
         </div>
@@ -54,35 +54,41 @@
       </div>
 
       <!-- Mobile Navigation Menu -->
-      <div id="mobile-menu" class="md:hidden hidden fixed inset-0 z-50 bg-gradient-to-b from-tertiary to-secondary">
-        <!-- Close button -->
-        <div class="flex justify-end p-4">
-          <button id="close-mobile-menu" type="button" class="text-white hover:text-gray-200 focus:outline-none" aria-label="Cerrar menú de navegación">
-            <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
-        </div>
+      <div id="mobile-menu" class="md:hidden hidden fixed inset-0 z-50">
+        <!-- Overlay Background -->
+        <div class="fixed inset-0 bg-black bg-opacity-50"></div>
         
-        <!-- Menu items centered -->
-        <div class="flex flex-col items-center justify-center h-full -mt-16 space-y-8">
-          <a href="../inicio.html" class="text-white text-xl font-medium transition-colors duration-200 font-heading">
-            Inicio
-          </a>
-          <a href="costa.html" class="text-white text-xl font-medium transition-colors duration-200 font-heading">
-            Costa
-          </a>
-          <a href="../sierra/sierra.html" class="text-white text-xl font-medium transition-colors duration-200 font-heading">
-            Sierra
-          </a>
-          <a href="../selva/selva.html" class="text-white text-xl font-medium transition-colors duration-200 font-heading">
-            Selva
-          </a>
-        </div>
-        
-        <!-- Logo at bottom -->
-        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2">
-          <img src="../../public/assets/images/LogoPeruvianTravel.png" alt="Peruvian Travel Logo" class="h-8 w-auto">
+        <!-- Menu Content -->
+        <div class="relative z-10 flex flex-col h-full bg-gradient-to-b from-tertiary to-secondary">
+          <!-- Close button -->
+          <div class="flex justify-end p-4">
+            <button id="close-mobile-menu" type="button" class="text-white hover:text-gray-200 focus:outline-none p-2" aria-label="Cerrar menú de navegación">
+              <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+          
+          <!-- Menu items centered -->
+          <div class="flex flex-col items-center justify-center flex-1 space-y-8">
+            <a href="../inicio.html" class="text-white text-xl font-medium transition-colors duration-200 font-heading">
+              Inicio
+            </a>
+            <a href="costa.html" class="text-white text-xl font-medium transition-colors duration-200 font-heading">
+              Costa
+            </a>
+            <a href="../sierra/sierra.html" class="text-white text-xl font-medium transition-colors duration-200 font-heading">
+              Sierra
+            </a>
+            <a href="../selva/selva.html" class="text-white text-xl font-medium transition-colors duration-200 font-heading">
+              Selva
+            </a>
+          </div>
+          
+          <!-- Logo at bottom -->
+          <div class="p-8 text-center">
+            <img src="../../public/assets/images/LogoPeruvianTravel.png" alt="Peruvian Travel Logo" class="h-8 w-auto mx-auto">
+          </div>
         </div>
       </div>
     </div>
@@ -361,21 +367,33 @@
       const closeMobileMenuButton = document.getElementById('close-mobile-menu');
       const mobileMenu = document.getElementById('mobile-menu');
 
-      mobileMenuButton.addEventListener('click', function() {
-        mobileMenu.classList.toggle('hidden');
-      });
+      if (mobileMenuButton && mobileMenu) {
+        mobileMenuButton.addEventListener('click', function() {
+          console.log('Mobile menu button clicked'); // Debug
+          mobileMenu.classList.toggle('hidden');
+          const isExpanded = !mobileMenu.classList.contains('hidden');
+          mobileMenuButton.setAttribute('aria-expanded', isExpanded);
+        });
+      }
 
-      closeMobileMenuButton.addEventListener('click', function() {
-        mobileMenu.classList.add('hidden');
-      });
+      if (closeMobileMenuButton && mobileMenu) {
+        closeMobileMenuButton.addEventListener('click', function() {
+          console.log('Close mobile menu button clicked'); // Debug
+          mobileMenu.classList.add('hidden');
+          mobileMenuButton.setAttribute('aria-expanded', 'false');
+        });
+      }
 
       // Close mobile menu when clicking on a link
-      const mobileMenuLinks = mobileMenu.querySelectorAll('a');
-      mobileMenuLinks.forEach(link => {
-        link.addEventListener('click', function() {
-          mobileMenu.classList.add('hidden');
+      if (mobileMenu) {
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+        mobileMenuLinks.forEach(link => {
+          link.addEventListener('click', function() {
+            mobileMenu.classList.add('hidden');
+            mobileMenuButton.setAttribute('aria-expanded', 'false');
+          });
         });
-      });
+      }
 
       // Smooth scrolling for anchor links
       const anchorLinks = document.querySelectorAll('a[href^="#"]');
