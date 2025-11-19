@@ -98,6 +98,11 @@
     .duration-200 { transition-duration: 200ms; }
     .font-heading { font-family: 'Cinzel', serif; }
     .absolute { position: absolute; }
+    /* Dropdown menu styles */
+    .dropdown-menu { position: absolute; left: 0; margin-top: 0.5rem; width: 12rem; background-color: white; border-radius: 0.375rem; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); padding-top: 0.25rem; padding-bottom: 0.25rem; z-index: 50; opacity: 0; visibility: hidden; transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out; }
+    .dropdown-menu.visible { opacity: 1; visibility: visible; }
+    .dropdown-menu a { display: block; padding-left: 1rem; padding-right: 1rem; padding-top: 0.5rem; padding-bottom: 0.5rem; font-size: 0.875rem; color: #7f1d1d; transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out; font-family: 'Cinzel', serif; }
+    .dropdown-menu a:hover { background-color: #fef2f2; color: #5f1a1a; }
     .bottom-8 { bottom: 2rem; }
     .left-1\/2 { left: 50%; }
     .transform { transform: translateX(var(--tw-translate-x, 0)) translateY(var(--tw-translate-y, 0)) rotate(var(--tw-rotate, 0)) skewX(var(--tw-skew-x, 0)) skewY(var(--tw-skew-y, 0)) scaleX(var(--tw-scale-x, 1)) scaleY(var(--tw-scale-y, 1)); }
@@ -212,15 +217,24 @@
             <a href="inicio.html" class="text-primary-700 hover:text-primary-800 px-3 py-2 text-sm font-medium transition-colors duration-200 font-heading">
               Inicio
             </a>
-            <a href="costa/costa.html" class="text-primary-700 hover:text-primary-800 px-3 py-2 text-sm font-medium transition-colors duration-200 font-heading">
-              Costa
-            </a>
-            <a href="sierra/sierra.html" class="text-primary-700 hover:text-primary-800 px-3 py-2 text-sm font-medium transition-colors duration-200 font-heading">
-              Sierra
-            </a>
-            <a href="selva/selva.html" class="text-primary-700 hover:text-primary-800 px-3 py-2 text-sm font-medium transition-colors duration-200 font-heading">
-              Selva
-            </a>
+            <!-- Costa Dropdown -->
+            <div class="relative">
+              <a href="costa/costa.html" id="costa-menu-trigger" class="text-primary-700 hover:text-primary-800 px-3 py-2 text-sm font-medium transition-colors duration-200 font-heading cursor-pointer">
+                Costa
+              </a>
+            </div>
+            <!-- Sierra Dropdown -->
+            <div class="relative">
+              <a href="sierra/sierra.html" id="sierra-menu-trigger" class="text-primary-700 hover:text-primary-800 px-3 py-2 text-sm font-medium transition-colors duration-200 font-heading cursor-pointer">
+                Sierra
+              </a>
+            </div>
+            <!-- Selva Dropdown -->
+            <div class="relative">
+              <a href="selva/selva.html" id="selva-menu-trigger" class="text-primary-700 hover:text-primary-800 px-3 py-2 text-sm font-medium transition-colors duration-200 font-heading cursor-pointer">
+                Selva
+              </a>
+            </div>
             <a href="destinos.html" class="bg-secondary-700 hover:bg-secondary-800 text-white px-6 py-2 rounded-lg text-sm font-medium transition-colors duration-200 shadow-md hover:shadow-lg font-heading">
               Explorar destinos
             </a>
@@ -688,5 +702,8 @@
       });
     });
   </script>
+  
+  <!-- JavaScript for desktop dropdown menus -->
+  <script src="./js/app.js"></script>
 </body>
 </html>

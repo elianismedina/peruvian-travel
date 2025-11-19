@@ -5,11 +5,14 @@
   "main": "src/inicio.html",
   "scripts": {
     "build": "echo 'Build completed'",
-    "dev": "echo 'Development server would start here'"
+    "dev": "live-server --port=3000 --open=/src/inicio.html",
+    "start": "npm run dev"
   },
   "keywords": ["peru", "travel", "tourism", "destinations"],
   "author": "Peruvian Travel",
   "license": "MIT",
-  "devDependencies": {},
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  },
   "dependencies": {}
 }

@@ -45,6 +45,11 @@
     .font-heading { font-family: 'Cinzel', serif; }
     .text-primary-700 { color: #1e40af; }
     .border-b-2 { border-bottom-width: 2px; }
+    /* Dropdown menu styles */
+    .dropdown-menu { position: absolute; left: 0; margin-top: 0.5rem; width: 12rem; background-color: white; border-radius: 0.375rem; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); padding-top: 0.25rem; padding-bottom: 0.25rem; z-index: 50; opacity: 0; visibility: hidden; transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out; }
+    .dropdown-menu.visible { opacity: 1; visibility: visible; }
+    .dropdown-menu a { display: block; padding-left: 1rem; padding-right: 1rem; padding-top: 0.5rem; padding-bottom: 0.5rem; font-size: 0.875rem; color: #7f1d1d; transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out; font-family: 'Cinzel', serif; }
+    .dropdown-menu a:hover { background-color: #fef2f2; color: #5f1a1a; }
     .border-primary-700 { border-color: #1e40af; }
     .bg-secondary { background-color: #f59e0b; }
     .hover\:bg-secondary-600:hover { background-color: #d97706; }
@@ -87,6 +92,34 @@
     .font-medium { font-weight: 500; }
     .font-body { font-family: 'Merriweather', serif; }
     .z-10 { z-index: 10; }
+    /* Image Slider Styles */
+    .slider-container { position: relative; width: 100%; max-width: 1200px; margin: 0 auto; overflow: hidden; border-radius: 0.5rem; box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); }
+    .slider-wrapper { position: relative; width: 100%; height: 400px; overflow: hidden; }
+    @media (min-width: 640px) {
+      .slider-wrapper { height: 500px; }
+    }
+    @media (min-width: 1024px) {
+      .slider-wrapper { height: 600px; }
+    }
+    .slider-track { display: flex; transition: transform 0.5s ease-in-out; height: 100%; }
+    .slider-slide { min-width: 100%; height: 100%; position: relative; }
+    .slider-slide img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .slider-overlay { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent); padding: 2rem 1.5rem 1.5rem; color: white; }
+    .slider-title { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; font-family: 'Cinzel', serif; }
+    @media (min-width: 640px) {
+      .slider-title { font-size: 2rem; }
+    }
+    .slider-description { font-size: 1rem; opacity: 0.95; font-family: 'Merriweather', serif; }
+    .slider-nav-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(255, 255, 255, 0.9); border: none; width: 48px; height: 48px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 20; transition: all 0.3s ease; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); }
+    .slider-nav-btn:hover { background: white; transform: translateY(-50%) scale(1.1); }
+    .slider-nav-btn:active { transform: translateY(-50%) scale(0.95); }
+    .slider-nav-btn.prev { left: 1rem; }
+    .slider-nav-btn.next { right: 1rem; }
+    .slider-nav-btn svg { width: 24px; height: 24px; color: #1e40af; }
+    .slider-dots { position: absolute; bottom: 1rem; left: 50%; transform: translateX(-50%); display: flex; gap: 0.5rem; z-index: 20; }
+    .slider-dot { width: 12px; height: 12px; border-radius: 50%; background: rgba(255, 255, 255, 0.5); border: 2px solid rgba(255, 255, 255, 0.8); cursor: pointer; transition: all 0.3s ease; }
+    .slider-dot.active { background: white; border-color: white; transform: scale(1.2); }
+    .slider-dot:hover { background: rgba(255, 255, 255, 0.8); }
   </style>
   <!-- Defer non-critical CSS -->
   <link href="../output.css" rel="stylesheet" media="print" onload="this.media='all'">
@@ -112,15 +145,24 @@
             <a href="../inicio.html" class="text-primary hover:text-primary-700 px-3 py-2 text-sm font-medium transition-colors duration-200 font-heading">
               Inicio
             </a>
-            <a href="../costa/costa.html" class="text-primary hover:text-primary-700 px-3 py-2 text-sm font-medium transition-colors duration-200 font-heading">
-              Costa
-            </a>
-            <a href="../sierra/sierra.html" class="text-primary hover:text-primary-700 px-3 py-2 text-sm font-medium transition-colors duration-200 font-heading">
-              Sierra
-            </a>
-            <a href="selva.html" class="text-primary-700 px-3 py-2 text-sm font-medium border-b-2 border-primary-700 font-heading">
-              Selva
-            </a>
+            <!-- Costa Dropdown -->
+            <div class="relative">
+              <a href="../costa/costa.html" id="costa-menu-trigger" class="text-primary hover:text-primary-700 px-3 py-2 text-sm font-medium transition-colors duration-200 font-heading cursor-pointer">
+                Costa
+              </a>
+            </div>
+            <!-- Sierra Dropdown -->
+            <div class="relative">
+              <a href="../sierra/sierra.html" id="sierra-menu-trigger" class="text-primary hover:text-primary-700 px-3 py-2 text-sm font-medium transition-colors duration-200 font-heading cursor-pointer">
+                Sierra
+              </a>
+            </div>
+            <!-- Selva Dropdown -->
+            <div class="relative">
+              <a href="selva.html" id="selva-menu-trigger" class="text-primary-700 px-3 py-2 text-sm font-medium border-b-2 border-primary-700 font-heading cursor-pointer">
+                Selva
+              </a>
+            </div>
             <a href="../destinos.html" class="bg-secondary hover:bg-secondary-600 text-black px-6 py-2 rounded-lg text-sm font-medium transition-colors duration-200 shadow-md hover:shadow-lg font-heading">
               Explorar destinos
             </a>
@@ -243,30 +285,56 @@
       </div>
     </div>
 
-    <!-- Preview Content -->
-    <div class="mt-8 sm:mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
-      <div class="bg-white rounded-lg shadow-md p-4 sm:p-6 hover:shadow-lg transition-shadow duration-300">
-        <div class="bg-tertiary-100 h-32 sm:h-40 lg:h-48 rounded-lg mb-3 sm:mb-4 flex items-center justify-center">
-          <span class="text-tertiary-700 font-medium text-sm sm:text-base">Imagen de Iquitos</span>
+    <!-- Image Slider -->
+    <div class="mt-8 sm:mt-12">
+      <div class="slider-container">
+        <div class="slider-wrapper">
+          <div class="slider-track" id="slider-track">
+            <!-- Slide 1: Iquitos -->
+            <div class="slider-slide">
+              <img src="../../public/assets/images/Iquitos.webp" alt="Iquitos - Capital de la Amazonía peruana" loading="lazy">
+              <div class="slider-overlay">
+                <h3 class="slider-title">Iquitos</h3>
+                <p class="slider-description">Capital de la Amazonía peruana y puerta de entrada a la selva más biodiversa del mundo</p>
+              </div>
+            </div>
+            <!-- Slide 2: Puerto Maldonado -->
+            <div class="slider-slide">
+              <img src="../../public/assets/images/PuertoMaldonado.webp" alt="Puerto Maldonado - Puerta de entrada al Manu" loading="lazy">
+              <div class="slider-overlay">
+                <h3 class="slider-title">Puerto Maldonado</h3>
+                <p class="slider-description">Puerta de entrada al Parque Nacional del Manu y la Reserva Nacional Tambopata</p>
+              </div>
+            </div>
+            <!-- Slide 3: Tarapoto -->
+            <div class="slider-slide">
+              <img src="../../public/assets/images/Tarapoto.webp" alt="Tarapoto - La ciudad de las palmas" loading="lazy">
+              <div class="slider-overlay">
+                <h3 class="slider-title">Tarapoto</h3>
+                <p class="slider-description">La ciudad de las palmas, conocida por sus cascadas y la rica cultura amazónica</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Navigation Buttons -->
+          <button class="slider-nav-btn prev" id="slider-prev" aria-label="Imagen anterior">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+            </svg>
+          </button>
+          <button class="slider-nav-btn next" id="slider-next" aria-label="Imagen siguiente">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </button>
+          
+          <!-- Dots Indicator -->
+          <div class="slider-dots" id="slider-dots">
+            <span class="slider-dot active" data-slide="0" aria-label="Ir a imagen 1"></span>
+            <span class="slider-dot" data-slide="1" aria-label="Ir a imagen 2"></span>
+            <span class="slider-dot" data-slide="2" aria-label="Ir a imagen 3"></span>
+          </div>
         </div>
-        <h3 class="text-base sm:text-lg font-semibold text-primary mb-1 sm:mb-2 font-heading">Iquitos</h3>
-        <p class="text-gray-600 text-xs sm:text-sm font-body">Capital de la Amazonía peruana</p>
-      </div>
-
-      <div class="bg-white rounded-lg shadow-md p-4 sm:p-6 hover:shadow-lg transition-shadow duration-300">
-        <div class="bg-tertiary-100 h-32 sm:h-40 lg:h-48 rounded-lg mb-3 sm:mb-4 flex items-center justify-center">
-          <span class="text-tertiary-700 font-medium text-sm sm:text-base">Imagen de Puerto Maldonado</span>
-        </div>
-        <h3 class="text-base sm:text-lg font-semibold text-primary mb-1 sm:mb-2 font-heading">Puerto Maldonado</h3>
-        <p class="text-gray-600 text-xs sm:text-sm font-body">Puerta de entrada al Manu</p>
-      </div>
-
-      <div class="bg-white rounded-lg shadow-md p-4 sm:p-6 hover:shadow-lg transition-shadow duration-300">
-        <div class="bg-tertiary-100 h-32 sm:h-40 lg:h-48 rounded-lg mb-3 sm:mb-4 flex items-center justify-center">
-          <span class="text-tertiary-700 font-medium text-sm sm:text-base">Imagen de Tarapoto</span>
-        </div>
-        <h3 class="text-base sm:text-lg font-semibold text-primary mb-1 sm:mb-2 font-heading">Tarapoto</h3>
-        <p class="text-gray-600 text-xs sm:text-sm font-body">La ciudad de las palmas</p>
       </div>
     </div>
 
@@ -392,6 +460,117 @@
           });
         });
       }
+    });
+  </script>
+  
+  <!-- JavaScript for desktop dropdown menus -->
+  <script src="../js/app.js"></script>
+  
+  <!-- JavaScript for Image Slider -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const sliderTrack = document.getElementById('slider-track');
+      const prevBtn = document.getElementById('slider-prev');
+      const nextBtn = document.getElementById('slider-next');
+      const dots = document.querySelectorAll('.slider-dot');
+      
+      let currentSlide = 0;
+      const totalSlides = 3; // Iquitos, Puerto Maldonado, Tarapoto
+      let autoSlideInterval;
+      
+      // Función para actualizar el slider
+      function updateSlider() {
+        // Mover el track
+        sliderTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
+        
+        // Actualizar los dots
+        dots.forEach((dot, index) => {
+          if (index === currentSlide) {
+            dot.classList.add('active');
+          } else {
+            dot.classList.remove('active');
+          }
+        });
+      }
+      
+      // Función para ir a una slide específica
+      function goToSlide(slideIndex) {
+        currentSlide = slideIndex;
+        if (currentSlide < 0) {
+          currentSlide = totalSlides - 1;
+        } else if (currentSlide >= totalSlides) {
+          currentSlide = 0;
+        }
+        updateSlider();
+        resetAutoSlide();
+      }
+      
+      // Función para siguiente slide
+      function nextSlide() {
+        goToSlide(currentSlide + 1);
+      }
+      
+      // Función para slide anterior
+      function prevSlide() {
+        goToSlide(currentSlide - 1);
+      }
+      
+      // Función para iniciar el auto-slide
+      function startAutoSlide() {
+        autoSlideInterval = setInterval(nextSlide, 5000); // Cambia cada 5 segundos
+      }
+      
+      // Función para detener el auto-slide
+      function stopAutoSlide() {
+        if (autoSlideInterval) {
+          clearInterval(autoSlideInterval);
+        }
+      }
+      
+      // Función para resetear el auto-slide
+      function resetAutoSlide() {
+        stopAutoSlide();
+        startAutoSlide();
+      }
+      
+      // Event listeners para los botones de navegación
+      if (nextBtn) {
+        nextBtn.addEventListener('click', function() {
+          nextSlide();
+        });
+      }
+      
+      if (prevBtn) {
+        prevBtn.addEventListener('click', function() {
+          prevSlide();
+        });
+      }
+      
+      // Event listeners para los dots
+      dots.forEach((dot, index) => {
+        dot.addEventListener('click', function() {
+          goToSlide(index);
+        });
+      });
+      
+      // Pausar auto-slide cuando el mouse está sobre el slider
+      const sliderContainer = document.querySelector('.slider-container');
+      if (sliderContainer) {
+        sliderContainer.addEventListener('mouseenter', stopAutoSlide);
+        sliderContainer.addEventListener('mouseleave', startAutoSlide);
+      }
+      
+      // Iniciar el auto-slide
+      startAutoSlide();
+      
+      // Limpiar el intervalo cuando la página se oculta (para ahorrar recursos)
+      document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+          stopAutoSlide();
+        } else {
+          startAutoSlide();
+        }
+      });
     });
   </script>
 </body>
