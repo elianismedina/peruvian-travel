@@ -1,4 +1,28 @@
 document.addEventListener("DOMContentLoaded", function () {
+  // Función para mostrar saludo dinámico
+  function updateGreeting() {
+    const greetingElement = document.getElementById('dynamic-greeting');
+    if (!greetingElement) return;
+
+    const hour = new Date().getHours();
+    const lang = navigator.language || navigator.userLanguage; 
+    const isEnglish = lang && lang.startsWith('en');
+
+    let greeting = '';
+    
+    if (hour >= 5 && hour < 12) {
+      greeting = isEnglish ? 'Good Morning' : 'Buenos Días';
+    } else if (hour >= 12 && hour < 19) {
+      greeting = isEnglish ? 'Good Afternoon' : 'Buenas Tardes';
+    } else {
+      greeting = isEnglish ? 'Good Evening' : 'Buenas Noches';
+    }
+
+    greetingElement.textContent = greeting;
+  }
+
+  updateGreeting();
+
   if (window.innerWidth < 768) {
     return; // No ejecutar en móvil
   }
